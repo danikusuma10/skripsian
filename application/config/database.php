@@ -75,11 +75,12 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '103.134.152.2',
-	'username' => 'yptpayma_ypt1',
+	'hostname' => 'sgz10.cloudhost.id',
+	'username' => 'yptpayma_1',
 	'password' => 'beliveme16',
-	'database' => 'yptpayma_1',
+	'database' => 'yptpayma_ypt1',
 	'dbdriver' => 'mysqli',
+	'dbport' => '3306',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
