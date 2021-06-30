@@ -8,7 +8,7 @@ class Transaksi1 extends CI_Controller
         parent::__construct();
       
 
-        $this->load->model('m_transaksi');
+        $this->load->model('M_transaksi');
         $this->load->helper('url');
     }
 
