@@ -15,7 +15,7 @@ class Riwayat extends CI_Controller
         $this->load->library('veritrans');
         $this->veritrans->config($params);
         $this->load->model('Pembayaran_model');
-        $this->load->model('M_transaksi');
+        $this->load->model('m_transaksi');
     }
 
 
