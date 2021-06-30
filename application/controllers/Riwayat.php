@@ -8,13 +8,14 @@ class Riwayat extends CI_Controller
         parent::__construct();
 
 
-        $this->load->model('M_transaksi');
+        
         $this->load->helper('url');
         $this->load->database();
         $params = array('server_key' => 'SB-Mid-server-agj15d5qnNn06ZuKmkPA785C', 'production' => false);
         $this->load->library('veritrans');
         $this->veritrans->config($params);
         $this->load->model('Pembayaran_model');
+        $this->load->model('M_transaksi');
     }
 
 
