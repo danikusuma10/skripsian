@@ -7,8 +7,8 @@ class Riwayat extends CI_Controller
     {
         parent::__construct();
 
-     
-        $this->load->model('m_transaksi');
+
+        $this->load->model('M_transaksi');
         $this->load->helper('url');
         $this->load->database();
         $params = array('server_key' => 'SB-Mid-server-agj15d5qnNn06ZuKmkPA785C', 'production' => false);
@@ -16,13 +16,13 @@ class Riwayat extends CI_Controller
         $this->veritrans->config($params);
         $this->load->model('Pembayaran_model');
     }
-  
+
 
     public function index()
     {
-        $data['title'] 	= 'PEMBAYARAN SPP METODE PAYMENT GATEWAY 2021';
-        $data['user'] 	= $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data1['siswa'] = $this->m_transaksi->tampil_data()->result();
+        $data['title']     = 'PEMBAYARAN SPP METODE PAYMENT GATEWAY 2021';
+        $data['user']     = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data1['siswa'] = $this->M_transaksi->tampil_data()->result();
 
 
         $this->load->view('templates/header', $data);
@@ -33,38 +33,37 @@ class Riwayat extends CI_Controller
     public function getData()
     {
         $where  = $this->input->post('id_bayar');
-    	$ambil 	= $this->m_transaksi->tampil_datasw($where); // Ambil data dari model
+        $ambil     = $this->M_transaksi->tampil_datasw($where); // Ambil data dari model
         //var_dump($where);die();
-    	$data 	= array(); //Buat nanti nampilin datanya
-    	if(!empty($ambil)){ // Check kalo $ambil ga kosong
-    		foreach($ambil as $tarik){ // Looping isi data $ambil
-    			
-    			$row 	= array(); // Buat Table
-    			$row[]	= $tarik->id_bayar;
-    			$row[] 	= anchor('riwayat/detail/' . $tarik->id_bayar, '<input type=reset class="btn btn-info" value=\'Detail\'>');
-    			$data[] = $row;
-    		}
-    	}
-    	$output		= array(
-    		"draw"	=> $this->input->post('draw'),
-    		"data"	=> $data
-    	);
-    	echo json_encode($output);
-        
+        $data     = array(); //Buat nanti nampilin datanya
+        if (!empty($ambil)) { // Check kalo $ambil ga kosong
+            foreach ($ambil as $tarik) { // Looping isi data $ambil
+
+                $row     = array(); // Buat Table
+                $row[]    = $tarik->id_bayar;
+                $row[]     = anchor('riwayat/detail/' . $tarik->id_bayar, '<input type=reset class="btn btn-info" value=\'Detail\'>');
+                $data[] = $row;
+            }
+        }
+        $output        = array(
+            "draw"    => $this->input->post('draw'),
+            "data"    => $data
+        );
+        echo json_encode($output);
     }
 
 
     public function detail($id_bayar)
     {
-        $data['id_transaksi'] = $this->m_transaksi->id_transaksi();
+        $data['id_transaksi'] = $this->M_transaksi->id_transaksi();
         $data['tgl_bayar'] = date("Y-m-d");
         $data['title'] = 'Data Pembayaran SPP Siswa';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $where1 = array('id_bayar' => $id_bayar);
-        $data1['siswa'] = $this->m_transaksi->tampil_detail($where1)->result();
-        $data['tahunmasuk'] = $this->m_transaksi->getAllbayar();
-        $data2['trans'] = $this->m_transaksi->tampil_transaksi($where1)->result();
-        $data2['xtrans'] = $this->m_transaksi->tampil_xtrans($where1)->result();
+        $data1['siswa'] = $this->M_transaksi->tampil_detail($where1)->result();
+        $data['tahunmasuk'] = $this->M_transaksi->getAllbayar();
+        $data2['trans'] = $this->M_transaksi->tampil_transaksi($where1)->result();
+        $data2['xtrans'] = $this->M_transaksi->tampil_xtrans($where1)->result();
         $data2['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $query = $this->db->query('SELECT * FROM tahun_aktif 
@@ -86,7 +85,7 @@ class Riwayat extends CI_Controller
         }
     }
 
-   
+
 
     public function cektransaksi()
     {
