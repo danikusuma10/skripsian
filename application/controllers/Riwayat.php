@@ -7,9 +7,7 @@ class Riwayat extends CI_Controller
     {
         parent::__construct();
 
-       if (!$this->session->userdata('email')) {
-            redirect(base_url("auth"));
-        }
+       
         $this->load->model('M_transaksi');
         $this->load->helper('url');
         $this->load->database();
