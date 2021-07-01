@@ -3,7 +3,7 @@
 /**
  * 
  */
-class M_thajaran extends CI_Model
+class Thajaran_model extends CI_Model
 {
 
 	function ambil_data()

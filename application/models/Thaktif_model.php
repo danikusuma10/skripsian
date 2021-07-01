@@ -3,7 +3,7 @@
 /**
  * 
  */
-class M_thaktif extends CI_Model
+class Thaktif_model extends CI_Model
 {
 
 	function ambil_data()

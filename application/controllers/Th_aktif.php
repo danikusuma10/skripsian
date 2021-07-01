@@ -10,7 +10,7 @@ class th_aktif extends CI_Controller
         if (!$this->session->userdata('email')) {
             redirect(base_url("auth"));
         }
-        $this->load->model('m_thaktif');
+        $this->load->model('Thaktif_model');
         $this->load->helper('url');
     }
 
@@ -19,7 +19,7 @@ class th_aktif extends CI_Controller
     {
         $data['title'] = 'Data tahun aktif';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data1['tahun_aktif'] = $this->m_thaktif->tampil_data();
+        $data1['tahun_aktif'] = $this->Thaktif_model->tampil_data();
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -60,7 +60,7 @@ class th_aktif extends CI_Controller
         if ($query->num_rows() > 0) {
             redirect('th_aktif/tambah');
         } else {
-            $this->m_thaktif->input_data($data, 'tahun_aktif');
+            $this->Thaktif_model->input_data($data, 'tahun_aktif');
             redirect('th_aktif/tambah_tunggakan/' . $id_bayar . '/' . $id_tahun, '');
         }
     }
@@ -79,7 +79,7 @@ class th_aktif extends CI_Controller
     {
 
         $where = array('id_bayar' => $id_bayar, 'id_tahun' => $id_tahun);
-        $this->m_thaktif->hapus_data($where, 'tunggakan');
+        $this->Thaktif_model->hapus_data($where, 'tunggakan');
         redirect('th_aktif');
     }
 
@@ -100,7 +100,7 @@ class th_aktif extends CI_Controller
             'tunggakan' => $tunggakan
         );
 
-        $this->m_thaktif->input_data_tunggakan($data, 'tunggakan');
+        $this->Thaktif_model->input_data_tunggakan($data, 'tunggakan');
         redirect('th_aktif');
     }
 }

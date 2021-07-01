@@ -10,7 +10,7 @@ class Th_ajaran extends CI_Controller
         if (!$this->session->userdata('email')) {
             redirect(base_url("auth"));
         }
-        $this->load->model('m_thajaran');
+        $this->load->model('Thajaran_model');
         $this->load->helper('url');
     }
 
@@ -19,7 +19,7 @@ class Th_ajaran extends CI_Controller
     {
         $data['title'] = 'Data Tahun Iuran';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data1['tahun_masuk'] = $this->m_thajaran->tampil_data()->result();
+        $data1['tahun_masuk'] = $this->Thajaran_model->tampil_data()->result();
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -53,7 +53,7 @@ class Th_ajaran extends CI_Controller
             'besar_spp' => $besar_spp
         );
 
-        $this->m_thajaran->input_data($data, 'tahun_masuk');
+        $this->Thajaran_model->input_data($data, 'tahun_masuk');
         redirect('th_ajaran');
     }
 
@@ -62,7 +62,7 @@ class Th_ajaran extends CI_Controller
         $data['title'] = 'Data Tahun Iuran';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $where1 = array('id_tahun' => $id_tahun);
-        $data1['tahun_masuk'] = $this->m_thajaran->edit_data($where1, 'tahun_masuk')->result();
+        $data1['tahun_masuk'] = $this->Thajaran_model->edit_data($where1, 'tahun_masuk')->result();
         $this->load->view('template/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
@@ -82,7 +82,7 @@ class Th_ajaran extends CI_Controller
         );
         $where = array('id_tahun' => $id_tahun);
 
-        $this->m_thajaran->update_data($where, $data, 'tahun_masuk');
+        $this->Thajaran_model->update_data($where, $data, 'tahun_masuk');
         redirect('th_ajaran');
     }
     public function deleteAjaran()
