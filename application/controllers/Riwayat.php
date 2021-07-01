@@ -15,7 +15,7 @@ class Riwayat extends CI_Controller
         $this->load->library('veritrans');
         $this->veritrans->config($params);
         $this->load->model('Pembayaran_model');
-        $this->load->model('Riwayat_model');
+         $this->load->model('Riwayat_model');
     }
   
 
@@ -23,7 +23,7 @@ class Riwayat extends CI_Controller
     {
         $data['title'] 	= 'Data Pembayaran SPP Siswa';
         $data['user'] 	= $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data1['siswa'] = $this->M_transaksi->tampil_data()->result();
+        $data1['siswa'] = $this->Riwayat_model->tampil_data()->result();
 
 
         $this->load->view('templates/header', $data);
@@ -35,7 +35,7 @@ class Riwayat extends CI_Controller
     public function getData()
     {
         $where  = $this->input->post('id_bayar');
-    	$ambil 	= $this->M_transaksi->tampil_datasw($where); // Ambil data dari model
+    	$ambil 	= $this->Riwayat_model->tampil_datasw($where); // Ambil data dari model
         //var_dump($where);die();
     	$data 	= array(); //Buat nanti nampilin datanya
     	if(!empty($ambil)){ // Check kalo $ambil ga kosong
@@ -58,15 +58,15 @@ class Riwayat extends CI_Controller
 
     public function detail($id_bayar)
     {
-        $data['id_transaksi'] = $this->M_transaksi->id_transaksi();
+        $data['id_transaksi'] = $this->Riwayat_model->id_transaksi();
         $data['tgl_bayar'] = date("Y-m-d");
         $data['title'] = 'Data Pembayaran SPP Siswa';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $where1 = array('id_bayar' => $id_bayar);
-        $data1['siswa'] = $this->M_transaksi->tampil_detail($where1)->result();
-        $data['tahunmasuk'] = $this->M_transaksi->getAllbayar();
-        $data2['trans'] = $this->M_transaksi->tampil_transaksi($where1)->result();
-        $data2['xtrans'] = $this->M_transaksi->tampil_xtrans($where1)->result();
+        $data1['siswa'] = $this->Riwayat_model->tampil_detail($where1)->result();
+        $data['tahunmasuk'] = $this->Riwayat_model->getAllbayar();
+        $data2['trans'] = $this->Riwayat_model->tampil_transaksi($where1)->result();
+        $data2['xtrans'] = $this->Riwayat_model->tampil_xtrans($where1)->result();
         $data2['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $query = $this->db->query('SELECT * FROM tahun_aktif 
@@ -114,7 +114,7 @@ class Riwayat extends CI_Controller
         if ($query->num_rows() > 0) {
             redirect('riwayat/detail/' . $id_bayar, '');
         } else {
-            $this->M_transaksi->input_data($data, 'transaksi1');
+            $this->Riwayat_model->input_data($data, 'transaksi1');
             redirect('riwayat/kurang_tunggakan/' . $id_bayar . '/' . $id_tahun, '');
         }
     }
