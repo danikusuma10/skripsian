@@ -122,6 +122,12 @@ class Auth extends CI_Controller
                 'is_active' => 0,
                 'date_created' => time()
             ];
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            Congratulation! your account has been created, please login
+          </div>');
+                redirect('auth');
+
+
 
             // siapkan token
             $token = base64_encode(random_bytes(32));
