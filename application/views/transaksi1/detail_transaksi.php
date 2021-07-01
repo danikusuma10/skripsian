@@ -37,7 +37,7 @@
                     <label">Bayar Bulan</label>
                         <select name="bulan" class="form-control" style="margin-left: 10px;">
                             <?php
-                            foreach ($this->m_transaksi->tampil_databulan()->result() as $bulan) {
+                            foreach ($this->Transaksi_model->tampil_databulan()->result() as $bulan) {
                             ?>
                                 <option value="<?php echo $bulan->id_bulan ?>"> <?php echo $bulan->bulan ?> </option>
                             <?php } ?>
@@ -48,7 +48,7 @@
                     <label>Tahun Ajaran</label>
                     <select name="tahun_masuk" id="tahun_masuk" class="form-control" style="margin-left: 10px;">
                         <?php
-                        foreach ($this->db->query('SELECT tahun_masuk.id_tahun, tahun_masuk.tahun_masuk, tahun_masuk.besar_spp FROM tahun_masuk JOIN tahun_aktif ON tahun_masuk.id_tahun=tahun_aktif.id_tahun WHERE id_bayar=\'' . $u->id_bayar . '\'')->result() as $tahun) { /*$this->m_transaksi->tampil_datatahun()->result() */
+                        foreach ($this->db->query('SELECT tahun_masuk.id_tahun, tahun_masuk.tahun_masuk, tahun_masuk.besar_spp FROM tahun_masuk JOIN tahun_aktif ON tahun_masuk.id_tahun=tahun_aktif.id_tahun WHERE id_bayar=\'' . $u->id_bayar . '\'')->result() as $tahun) { /*$this->Transaksi_model->tampil_datatahun()->result() */
                         ?>
                             <option value="<?php echo $tahun->id_tahun ?>"> <?php echo $tahun->tahun_masuk . ' | Rp. ' . number_format($tahun->besar_spp, 0, ',', '.'); ?> </option>
 

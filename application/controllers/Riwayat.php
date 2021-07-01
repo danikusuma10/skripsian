@@ -27,7 +27,6 @@ class Riwayat extends CI_Controller
 
 
         $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
         $this->load->view('riwayat/index', $data1);
         $this->load->view('templates/footer');
@@ -74,7 +73,6 @@ class Riwayat extends CI_Controller
 
         if ($query->num_rows() == 0) {
             $this->load->view('templates/header', $data);
-            $this->load->view('templates/sidebar', $data);
             $this->load->view('templates/topbar', $data);
             $this->load->view('riwayat/detail', $data1);
             $this->load->view('templates/footer');

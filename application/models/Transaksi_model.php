@@ -3,7 +3,7 @@
 /**
  * 
  */
-class M_transaksi extends CI_Model
+class Transaksi_model extends CI_Model
 {
 	function tampil_datasw($where)
     {
