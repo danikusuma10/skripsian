@@ -6,7 +6,7 @@ class Transaksi1 extends CI_Controller
     function __construct()
     {
         parent::__construct();
-      
+        is_logged_in();
 
         $this->load->model('M_transaksi');
         $this->load->helper('url');

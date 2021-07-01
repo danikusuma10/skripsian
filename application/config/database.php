@@ -80,7 +80,7 @@ $db['default'] = array(
 	'password' => 'beliveme16',
 	'database' => 'yptpayma_ypt1',
 	'dbdriver' => 'mysqli',
-	'dbport' => '3306',
+	'dbport'   => '3306',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
