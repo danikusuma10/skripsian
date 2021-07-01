@@ -7,8 +7,6 @@ class Riwayat extends CI_Controller
     {
         parent::__construct();
 
-       
-       
         $this->load->helper('url');
         $this->load->database();
         $params = array('server_key' => 'SB-Mid-server-agj15d5qnNn06ZuKmkPA785C', 'production' => false);
@@ -86,36 +84,7 @@ class Riwayat extends CI_Controller
         }
     }
 
-    function tambah_aksi()
-    {
-
-        $id_bayar = $this->input->post('id_bayar');
-        $id = $this->input->post('id');
-        $id_transaksi = $this->input->post('id_transaksi');
-        $tgl_bayar = $this->input->post('tgl_bayar');
-        $id_bulan = $this->input->post('bulan');
-        $id_tahun = $this->input->post('tahun_masuk');
-
-        $data = array(
-            'id_transaksi' => $id_transaksi,
-            'id_bayar' => $id_bayar,
-            'id_bulan' => $id_bulan,
-            'id_tahun' => $id_tahun,
-            'tanggal_bayar' => $tgl_bayar,
-            'id' => $id,
-        );
-
-        $query = $this->db->query('SELECT * FROM transaksi1 
-				WHERE id_bulan =' . $id_bulan . ' 
-				AND id_tahun=' . $id_tahun . ' AND id_bayar=' . $id_bayar . '');
-
-        if ($query->num_rows() > 0) {
-            redirect('riwayat/detail/' . $id_bayar, '');
-        } else {
-            $this->Riwayat_model->input_data($data, 'transaksi1');
-            redirect('riwayat/kurang_tunggakan/' . $id_bayar . '/' . $id_tahun, '');
-        }
-    }
+    
 
     public function cektransaksi()
     {
