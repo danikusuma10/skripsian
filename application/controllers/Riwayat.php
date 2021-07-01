@@ -27,7 +27,7 @@ class Riwayat extends CI_Controller
 
 
         $this->load->view('templates/header', $data);
-        $this->load->view('templates/topbar', $data);
+        $this->load->view('templates/topbare', $data);
         $this->load->view('riwayat/index', $data1);
         $this->load->view('templates/footer');
     }
