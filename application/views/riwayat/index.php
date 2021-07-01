@@ -12,11 +12,9 @@
         <div class="card-body">
 
             <div class="table-responsive">
-                <table class="table table-borderd" id="example" width="80%" cellspacing="1" >
-                <div class="container">
-                    <input type="text" name="id_bayar" id="id_bayar">
-                    <button id="search">Cari ID bayar</button>
-                </div>
+                <table class="table table-borderd" id="example" width="30%" cellspacing="1" >
+ <input type="text" name="id_bayar" id="id_bayar">
+ <button id="search">Tampilkan</button>
                     <thead>
                         <tr>
                             <th>ID Bayar</th>
@@ -29,17 +27,6 @@
             
 </form>
         
-<footer class="sticky-footer bg-white">
-     <div class="container my-auto">
-         <div class="copyright text-center my-auto">
-             <span> YPT's - <em>Payment </em><?= date('Y'); ?> <em class="badge badge-info"> prototype</em> | <em>Developed By</em> Dani | <em>Theme by</em> <a href="https://startbootstrap.com/themes/sb-admin-2"> SB Admin 2</a>
-             </span>
-         </div>
-     </div>
- </footer> <!-- End of Footer -->
-
-
-
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -51,7 +38,15 @@
 
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 
-
+<!-- <script> type="text/javascript">
+$('#example').DataTable( {
+    dom: 'Bfrtip',
+    buttons: [
+        'searchPanesClear',
+        'searchPanes'
+    ]
+} );
+</script> -->
 
 <!-- DATATABLE BARU -->
 <script type="text/javascript">
@@ -60,7 +55,7 @@
         dom: 'B t<"top"i>r<"clear">',
         language: {
                 lengthMenu: "Display _MENU_ records",
-                zeroRecords: "Masukkan ID Bayar yang akan dicari dengan benar  <i class='far fa-smile-wink'></i>", // Setting Kata-katanya jika record kosong
+                zeroRecords: "Masukkan ID Bayar data yang akan dicari <i class='far fa-smile-wink'></i>", // Setting Kata-katanya jika record kosong
                 processing: "<i class='fas fa-spinner fa-spin' style='align:left;vertical-align:middle;padding:1px;'></i><br> Permintaan sedang diproses" // Kalo lagi proses, misal jika cari data yang ada di datatable
         },
         processing: true, // Ternyata disini masalahnya

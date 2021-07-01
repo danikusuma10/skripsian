@@ -7,8 +7,10 @@ class Riwayat extends CI_Controller
     {
         parent::__construct();
 
-
-        
+       if (!$this->session->userdata('email')) {
+            redirect(base_url("auth"));
+        }
+        $this->load->model('M_transaksi');
         $this->load->helper('url');
         $this->load->database();
         $params = array('server_key' => 'SB-Mid-server-agj15d5qnNn06ZuKmkPA785C', 'production' => false);
@@ -16,40 +18,42 @@ class Riwayat extends CI_Controller
         $this->veritrans->config($params);
         $this->load->model('Pembayaran_model');
     }
-
+  
 
     public function index()
     {
-        $data['title']     = 'PEMBAYARAN SPP METODE PAYMENT GATEWAY 2021';
-        $data['user']     = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['title'] 	= 'Data Pembayaran SPP Siswa';
+        $data['user'] 	= $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data1['siswa'] = $this->M_transaksi->tampil_data()->result();
 
 
         $this->load->view('templates/header', $data);
-        $this->load->view('templates/topbare', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
         $this->load->view('riwayat/index', $data1);
         $this->load->view('templates/footer');
     }
     public function getData()
     {
         $where  = $this->input->post('id_bayar');
-        $ambil     = $this->M_transaksi->tampil_datasw($where); // Ambil data dari model
+    	$ambil 	= $this->M_transaksi->tampil_datasw($where); // Ambil data dari model
         //var_dump($where);die();
-        $data     = array(); //Buat nanti nampilin datanya
-        if (!empty($ambil)) { // Check kalo $ambil ga kosong
-            foreach ($ambil as $tarik) { // Looping isi data $ambil
-
-                $row     = array(); // Buat Table
-                $row[]    = $tarik->id_bayar;
-                $row[]     = anchor('riwayat/detail/' . $tarik->id_bayar, '<input type=reset class="btn btn-info" value=\'Detail\'>');
-                $data[] = $row;
-            }
-        }
-        $output        = array(
-            "draw"    => $this->input->post('draw'),
-            "data"    => $data
-        );
-        echo json_encode($output);
+    	$data 	= array(); //Buat nanti nampilin datanya
+    	if(!empty($ambil)){ // Check kalo $ambil ga kosong
+    		foreach($ambil as $tarik){ // Looping isi data $ambil
+    			
+    			$row 	= array(); // Buat Table
+    			$row[]	= $tarik->id_bayar;
+    			$row[] 	= anchor('riwayat/detail/' . $tarik->id_bayar, '<input type=reset class="btn btn-info" value=\'Detail\'>');
+    			$data[] = $row;
+    		}
+    	}
+    	$output		= array(
+    		"draw"	=> $this->input->post('draw'),
+    		"data"	=> $data
+    	);
+    	echo json_encode($output);
+        
     }
 
 
@@ -72,12 +76,12 @@ class Riwayat extends CI_Controller
         if ($query->num_rows() == 0) {
             $this->load->view('templates/header', $data);
             $this->load->view('templates/sidebar', $data);
-            $this->load->view('templates/topbare', $data);
+            $this->load->view('templates/topbar', $data);
             $this->load->view('riwayat/detail', $data1);
             $this->load->view('templates/footer');
         } else {
             $this->load->view('templates/header', $data);
-            $this->load->view('templates/topbare', $data);
+            $this->load->view('templates/topbar', $data);
             $this->load->view('riwayat/detail', $data1);
             $this->load->view('riwayat/detail_transaksi', $data2);
             $this->load->view('riwayat/transaksi_hapus', $data2);
@@ -85,7 +89,36 @@ class Riwayat extends CI_Controller
         }
     }
 
+    function tambah_aksi()
+    {
 
+        $id_bayar = $this->input->post('id_bayar');
+        $id = $this->input->post('id');
+        $id_transaksi = $this->input->post('id_transaksi');
+        $tgl_bayar = $this->input->post('tgl_bayar');
+        $id_bulan = $this->input->post('bulan');
+        $id_tahun = $this->input->post('tahun_masuk');
+
+        $data = array(
+            'id_transaksi' => $id_transaksi,
+            'id_bayar' => $id_bayar,
+            'id_bulan' => $id_bulan,
+            'id_tahun' => $id_tahun,
+            'tanggal_bayar' => $tgl_bayar,
+            'id' => $id,
+        );
+
+        $query = $this->db->query('SELECT * FROM transaksi1 
+				WHERE id_bulan =' . $id_bulan . ' 
+				AND id_tahun=' . $id_tahun . ' AND id_bayar=' . $id_bayar . '');
+
+        if ($query->num_rows() > 0) {
+            redirect('riwayat/detail/' . $id_bayar, '');
+        } else {
+            $this->M_transaksi->input_data($data, 'transaksi1');
+            redirect('riwayat/kurang_tunggakan/' . $id_bayar . '/' . $id_tahun, '');
+        }
+    }
 
     public function cektransaksi()
     {
