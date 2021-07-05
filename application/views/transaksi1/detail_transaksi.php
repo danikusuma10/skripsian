@@ -26,11 +26,7 @@
 
                 <input name="id" class="form-control" type="text" value="<?= $user['id']; ?>" hidden>
                 <input name="id_bayar" class="form-control" type="text" value="<?php echo $u->id_bayar ?>" hidden>
-
-
-
                 <input name="id_transaksi" class="form-control" type="text" value="<?php echo $id_transaksi; ?>" hidden>
-
                 <input name="tgl_bayar" class="form-control" type="text" value="<?php echo $tgl_bayar; ?>" hidden>
 
                 <div class="form-group col-4">

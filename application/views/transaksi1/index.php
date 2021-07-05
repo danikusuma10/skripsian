@@ -11,8 +11,8 @@
 
         <div class="card-body">
             <?php if ($_SESSION["role_id"] == "1") { ?>
-                <a class="btn btn-primary mb-3" href="<?= base_url('th_aktif'); ?>">Add Tahun Aktif</a>
-                <a class="btn btn-success mb-3" href="<?= base_url('th_ajaran'); ?>">Add Tahun Ajaran</a>
+                <a class="btn btn-primary mb-3" href="<?= base_url('Th_aktif'); ?>">Add Tahun Aktif</a>
+                <a class="btn btn-success mb-3" href="<?= base_url('Th_ajaran'); ?>">Add Tahun Ajaran</a>
             <?php } ?>
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
