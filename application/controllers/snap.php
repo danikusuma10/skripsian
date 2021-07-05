@@ -14,7 +14,7 @@ class Snap extends CI_Controller
 		$this->load->library('midtrans');
 		$this->midtrans->config($params);
 		$this->load->helper('url');
-		$this->load->model('snapmodel');
+		$this->load->model('Snap_model');
 	}
 
 	public function index()
@@ -148,7 +148,7 @@ class Snap extends CI_Controller
 		];
 
 	
-		$return = $this->snapmodel->insert($data);
+		$return = $this->Snap_model->insert($data);
 		if ($return) {
 			echo "Success,Lets Make a Pay";
 		} else {
