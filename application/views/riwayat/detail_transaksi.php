@@ -140,7 +140,7 @@
     </div>
 
 </div>
-<!-- /.container-fluid -->
+<!-- /.container-fluid --
 </div>
 <!-- End of Main Content -->
 
@@ -173,7 +173,7 @@ $("#pirangwulan,#jumlahe").keyup(function() {
 
         $.ajax({
             type: 'POST',
-            url: '<?= site_url() ?>snap/token',
+            url: '<?= site_url() ?>Snap/token',
 
             data: {
 

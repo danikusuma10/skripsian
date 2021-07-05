@@ -14,7 +14,7 @@ class Snap extends CI_Controller
 		$this->load->library('midtrans');
 		$this->midtrans->config($params);
 		$this->load->helper('url');
-		$this->load->model('snapmodel');
+		$this->load->model('Snapmodel');
 	}
 
 	public function index()
