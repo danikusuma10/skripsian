@@ -24,7 +24,7 @@ class Snap extends CI_Controller
 
 	public function token()
 	{
-		$id_bayar = $this->input->post('nama_siswa');
+		$id_bayar = $this->input->post('id_bayar');
 		$nama_siswa = $this->input->post('nama_siswa');
 		$no_hp_siswa = $this->input->post('no_hp_siswa');
 		$emailwalimurid = $this->input->post('emailwalimurid');
@@ -35,7 +35,7 @@ class Snap extends CI_Controller
 			'order_id' => rand(),
 			'gross_amount' => $jumlahe // no decimal allowed for creditcard
 		);
-
+	
 		// Optional
 		$item1_details = array(
 			'id' => 'a1',
@@ -84,11 +84,14 @@ class Snap extends CI_Controller
 			'item_details'       => $item_details,
 			'customer_details'   => $customer_details
 		);
-
+		
 		error_log(json_encode($transaction_data));
 		$snapToken = $this->midtrans->getSnapToken($transaction_data);
 		error_log($snapToken);
 		echo $snapToken;
+
+		
+
 	}
 
 	public function finish()
