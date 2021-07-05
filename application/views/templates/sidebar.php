@@ -4,7 +4,7 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('user'); ?>">
         <div class="sidebar-brand-icon rotate-n-15">
-        <i class="fa fa-hacker-news" style="font-size:30px"></i>
+        <i class="fas fa-yen-sign" style="font-size:30px"></i>
         </div>
         <div class="sidebar-brand-text mx-3">YPT <small><em>Payment</em></small></div>
     </a>
