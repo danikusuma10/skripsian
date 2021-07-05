@@ -13,14 +13,14 @@ class Riwayat extends CI_Controller
         $this->load->library('veritrans');
         $this->veritrans->config($params);
         $this->load->model('Pembayaran_model');
-         $this->load->model('Riwayat_model');
+        $this->load->model('Riwayat_model');
     }
-  
+
 
     public function index()
     {
-        $data['title'] 	= 'Data Pembayaran SPP Siswa';
-        $data['user'] 	= $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['title']     = 'Data Pembayaran SPP Siswa';
+        $data['user']     = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data1['siswa'] = $this->Riwayat_model->tampil_data()->result();
 
 
@@ -32,24 +32,23 @@ class Riwayat extends CI_Controller
     public function getData()
     {
         $where  = $this->input->post('id_bayar');
-    	$ambil 	= $this->Riwayat_model->tampil_datasw($where); // Ambil data dari model
+        $ambil     = $this->Riwayat_model->tampil_datasw($where); // Ambil data dari model
         //var_dump($where);die();
-    	$data 	= array(); //Buat nanti nampilin datanya
-    	if(!empty($ambil)){ // Check kalo $ambil ga kosong
-    		foreach($ambil as $tarik){ // Looping isi data $ambil
-    			
-    			$row 	= array(); // Buat Table
-    			$row[]	= $tarik->id_bayar;
-    			$row[] 	= anchor('riwayat/detail/' . $tarik->id_bayar, '<input type=reset class="btn btn-info" value=\'Detail\'>');
-    			$data[] = $row;
-    		}
-    	}
-    	$output		= array(
-    		"draw"	=> $this->input->post('draw'),
-    		"data"	=> $data
-    	);
-    	echo json_encode($output);
-        
+        $data     = array(); //Buat nanti nampilin datanya
+        if (!empty($ambil)) { // Check kalo $ambil ga kosong
+            foreach ($ambil as $tarik) { // Looping isi data $ambil
+
+                $row     = array(); // Buat Table
+                $row[]    = $tarik->id_bayar;
+                $row[]     = anchor('riwayat/detail/' . $tarik->id_bayar, '<input type=reset class="btn btn-info" value=\'Detail\'>');
+                $data[] = $row;
+            }
+        }
+        $output        = array(
+            "draw"    => $this->input->post('draw'),
+            "data"    => $data
+        );
+        echo json_encode($output);
     }
 
 
@@ -84,7 +83,7 @@ class Riwayat extends CI_Controller
         }
     }
 
-    
+
 
     public function cektransaksi()
     {

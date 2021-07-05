@@ -151,7 +151,7 @@ class Transaksi1 extends CI_Controller
                 $transaksi = $this->Transaksi_model->view_by_date($tanggal1, $tanggal2)->result();
             } else if ($filter == '2') {
                 $id_bayar = $_GET['id_bayar'];
-                $ket = 'Data Transaksi dari Siswa dengan Nomor Induk ' . $id_bayar;
+                $ket = 'Data Transaksi dari Siswa dengan Nomor ID Bayar ' . $id_bayar;
                 $url_cetak = 'transaksi1/cetak2?&id_bayar=' . $id_bayar;
                 $transaksi = $this->Transaksi_model->view_by_idbayar($id_bayar)->result();
             } else {
