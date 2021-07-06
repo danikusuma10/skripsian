@@ -63,20 +63,29 @@ class Siswa extends CI_Controller
         $this->Siswas_model->hapusSiswa($id_bayar);
     }
 
-    public function transaksi()
-    {
-        $data['title'] = 'Transaksi';
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
-        $data['transaksi'] = $this->Siswas_model->getAllTransaksi();
+    public function edit(){
+        $id_bayar = $this->input->post('id_bayar');
+        $nama_siswa = $this->input->post('nama_siswa');
+        $kelas_id = $this->input->post('kelas_id');
+        $emailwalimurid = $this->input->post('emailwalimurid');
+        $no_hp_siswa = $this->input->post('no_hp_siswa');
+        $role_id = $this->input->post('role_id');
+        $is_active = $this->input->post('is_active');
+        $data = array(
+            'id_bayar' => $id_bayar,
+            'nama_siswa' => $nama_siswa,
+            'kelas_id' => $kelas_id,
+            'emailwalimurid' => $emailwalimurid,
+            'no_hp_siswa' => $no_hp_siswa,
+            'role_id' => $role_id,
+            'is_active' => $is_active,
+        );
+        $where = array('id_bayar' => $id_bayar);
 
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('siswa/transaksi', $data);
-        $this->load->view('templates/footer', $data);
+        $this->Siswas_model->update_data($where, $data, 'siswa');
+        redirect('siswa');
     }
-
 
     public function editSiswa()
     {

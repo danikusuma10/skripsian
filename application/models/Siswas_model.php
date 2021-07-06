@@ -14,7 +14,11 @@ class Siswas_model extends CI_Model
         return $this->db->query($query)->result_array();
     }
 
-
+    function update_data($where, $data, $table)
+    {
+        $this->db->where($where);
+        $this->db->update($table, $data);
+    }
 
 
     public function getAllKelas()
