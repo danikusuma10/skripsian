@@ -173,7 +173,7 @@ $("#pirangwulan,#jumlahe").keyup(function() {
 
         $.ajax({
             type: 'POST',
-            url: '<?= site_url() ?>Snap/token',
+            url: '<?= site_url() ?>snap/token',
 
             data: {
 

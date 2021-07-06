@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH'))  exit('No direct script access allowed');
 
-class Snap_model extends CI_Model
+class Snapmodel extends CI_Model
 {
     public $table = 'tbl_requesttransaksi';
     public $primaryKey = 'id';

@@ -82,10 +82,10 @@ class Transaksi1 extends CI_Controller
 				AND id_tahun=' . $id_tahun . ' AND id_bayar=' . $id_bayar . '');
 
         if ($query->num_rows() > 0) {
-            redirect('transaksi1/detail/' . $id_bayar, '');
+            redirect('Transaksi1/detail/' . $id_bayar, '');
         } else {
             $this->Transaksi_model->input_data($data, 'transaksi1');
-            redirect('transaksi1/kurang_tunggakan/' . $id_bayar . '/' . $id_tahun, '');
+            redirect('Transaksi1/kurang_tunggakan/' . $id_bayar . '/' . $id_tahun, '');
         }
     }
 
@@ -96,7 +96,7 @@ class Transaksi1 extends CI_Controller
         $where2 = array('id_transaksi' => $id_transaksi);
         $this->Transaksi_model->copy_input($where);
         $this->Transaksi_model->hapus_data($where2, 'transaksi1');
-        redirect('transaksi1/tambah_tunggakan/' . $id_bayar . '/' . $id_tahun, '');
+        redirect('Transaksi1/tambah_tunggakan/' . $id_bayar . '/' . $id_tahun, '');
     }
 
     function tambah_tunggakan($id_bayar, $id_tahun)
@@ -114,7 +114,7 @@ class Transaksi1 extends CI_Controller
 
         $where = array('id_bayar' => $id_bayar, 'id_tahun' => $id_tahun);
         $this->Transaksi_model->update_tunggakan($where, $data, 'tunggakan');
-        redirect('transaksi1/detail/' . $id_bayar, '');
+        redirect('Transaksi1/detail/' . $id_bayar, '');
     }
 
     function kurang_tunggakan($id_bayar, $id_tahun)
@@ -132,7 +132,7 @@ class Transaksi1 extends CI_Controller
 
         $where = array('id_bayar' => $id_bayar, 'id_tahun' => $id_tahun);
         $this->Transaksi_model->update_tunggakan($where, $data, 'tunggakan');
-        redirect('transaksi1/detail/' . $id_bayar, '');
+        redirect('Transaksi1/detail/' . $id_bayar, '');
     }
     /*LAPORAN TRANSAKSI*/
 
@@ -147,23 +147,23 @@ class Transaksi1 extends CI_Controller
                 $tanggal1 = $_GET['tanggal'];
                 $tanggal2 = $_GET['tanggal2'];
                 $ket = 'Data Transaksi dari Tanggal ' . date('d-m-y', strtotime($tanggal1)) . ' - ' . date('d-m-y', strtotime($tanggal2));
-                $url_cetak = 'transaksi1/cetak1?tanggal1=' . $tanggal1 . '&tanggal2=' . $tanggal2 . '';
+                $url_cetak = 'Transaksi1/cetak1?tanggal1=' . $tanggal1 . '&tanggal2=' . $tanggal2 . '';
                 $transaksi = $this->Transaksi_model->view_by_date($tanggal1, $tanggal2)->result();
             } else if ($filter == '2') {
                 $id_bayar = $_GET['id_bayar'];
                 $ket = 'Data Transaksi dari Siswa dengan Nomor ID Bayar ' . $id_bayar;
-                $url_cetak = 'transaksi1/cetak2?&id_bayar=' . $id_bayar;
+                $url_cetak = 'Transaksi1/cetak2?&id_bayar=' . $id_bayar;
                 $transaksi = $this->Transaksi_model->view_by_idbayar($id_bayar)->result();
             } else {
                 $tahun = $_GET['tahun'];
                 $ket = 'Data Transaksi Tahun Ajaran ' . $tahun;
-                $url_cetak = 'transaksi1/cetak4?&tahun=' . $tahun;
+                $url_cetak = 'Transaksi1/cetak4?&tahun=' . $tahun;
                 $transaksi = $this->Transaksi_model->view_by_year($tahun)->result();
             }
         } else {
 
             $ket = 'Semua Data Transaksi';
-            $url_cetak = 'transaksi1/cetak';
+            $url_cetak = 'Transaksi1/cetak';
             $transaksi = $this->Transaksi_model->view_all();
         }
 
@@ -180,7 +180,7 @@ class Transaksi1 extends CI_Controller
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
-        $this->load->view('transaksi1/laporan', $data);
+        $this->load->view('Transaksi1/laporan', $data);
         $this->load->view('templates/footer');
     }
 
@@ -193,7 +193,7 @@ class Transaksi1 extends CI_Controller
         require('assets/pdf/fpdf.php');
         $data['transaksi'] = $this->Transaksi_model->view_all();
         $data['ket'] = $ket;
-        $this->load->view('transaksi1/preview', $data);
+        $this->load->view('Transaksi1/preview', $data);
     }
 
     public function cetak1()
@@ -207,7 +207,7 @@ class Transaksi1 extends CI_Controller
         require('assets/pdf/fpdf.php');
         $data['transaksi'] = $this->Transaksi_model->view_by_date($tanggal1, $tanggal2)->result();
         $data['ket'] = $ket;
-        $this->load->view('transaksi1/preview', $data);
+        $this->load->view('Transaksi1/preview', $data);
     }
 
     public function cetak2()
@@ -220,7 +220,7 @@ class Transaksi1 extends CI_Controller
         require('assets/pdf/fpdf.php');
         $data['transaksi'] = $this->Transaksi_model->view_by_idbayar($id_bayar)->result();
         $data['ket'] = $ket;
-        $this->load->view('transaksi1/preview', $data);
+        $this->load->view('Transaksi1/preview', $data);
     }
 
     public function cetak3()
@@ -234,7 +234,7 @@ class Transaksi1 extends CI_Controller
         require('assets/pdf/fpdf.php');
         $data['transaksi'] = $this->Transaksi_model->view_by_kelas($kelas, $tahun)->result();
         $data['ket'] = $ket;
-        $this->load->view('transaksi1/preview', $data);
+        $this->load->view('Transaksi1/preview', $data);
     }
 
     public function cetak4()
@@ -247,6 +247,6 @@ class Transaksi1 extends CI_Controller
         require('assets/pdf/fpdf.php');
         $data['transaksi'] = $this->Transaksi_model->view_by_year($tahun)->result();
         $data['ket'] = $ket;
-        $this->load->view('transaksi1/preview', $data);
+        $this->load->view('Transaksi1/preview', $data);
     }
 }
