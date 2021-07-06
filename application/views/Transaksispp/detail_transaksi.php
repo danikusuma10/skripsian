@@ -22,7 +22,7 @@
 
         <div class="card-body">
 
-            <form class="form-inline" method="post" action="<?= base_url('transaksi1/tambah_aksi'); ?>" enctype="multipart/form-data">
+            <form class="form-inline" method="post" action="<?= base_url('Transaksispp/tambah_aksi'); ?>" enctype="multipart/form-data">
 
                 <input name="id" class="form-control" type="text" value="<?= $user['id']; ?>" hidden>
                 <input name="id_bayar" class="form-control" type="text" value="<?php echo $u->id_bayar ?>" hidden>
@@ -33,7 +33,7 @@
                     <label">Bayar Bulan</label>
                         <select name="bulan" class="form-control" style="margin-left: 10px;">
                             <?php
-                            foreach ($this->m_transaksi->tampil_databulan()->result() as $bulan) {
+                            foreach ($this->Transaksi_model->tampil_databulan()->result() as $bulan) {
                             ?>
                                 <option value="<?php echo $bulan->id_bulan ?>"> <?php echo $bulan->bulan ?> </option>
                             <?php } ?>
@@ -57,7 +57,7 @@
 
 
                 <div class="form-group col-2">
-                    <a class="btn btn-secondary mb-3" href="<?= base_url('transaksi1'); ?>">KEMBALI</a>
+                    <a class="btn btn-secondary mb-3" href="<?= base_url('Transaksispp'); ?>">KEMBALI</a>
                     <input type="submit" name="bayar" value="BAYAR" class="btn btn-primary mb-3">
                 </div>
             <?php } ?>
@@ -107,7 +107,7 @@
                                 <?php if ($u->id == $user['id']) { ?>
 
                                     <td>
-                                        <?php echo anchor('transaksi1/hapus/' . $u->id_transaksi . '/' . $u->id_bayar . '/' . $u->id_tahun, '<input type=reset class="btn btn-danger" value=\'Hapus\'>'); ?> <br>
+                                        <?php echo anchor('Transaksispp/hapus/' . $u->id_transaksi . '/' . $u->id_bayar . '/' . $u->id_tahun, '<input type=reset class="btn btn-danger" value=\'Hapus\'>'); ?> <br>
 
                                     </td>
                                 <?php } else { ?>

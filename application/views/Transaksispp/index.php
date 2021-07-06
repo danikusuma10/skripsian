@@ -37,7 +37,7 @@
                                 <td><?php echo $u->nama_siswa ?></td>
                                 <td>
 
-                                    <?php echo anchor('transaksi1/detail/' . $u->id_bayar, '<input type=reset class="btn btn-info" value=\'Detail\'>'); ?>
+                                    <?php echo anchor('Transaksispp/detail/' . $u->id_bayar, '<input type=reset class="btn btn-info" value=\'Detail\'>'); ?>
 
                                 </td>
                             </tr>

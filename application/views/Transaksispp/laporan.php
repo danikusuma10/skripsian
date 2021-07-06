@@ -62,7 +62,7 @@
                     </div>
 
                     <button class="btn btn-primary" type="submit">Tampilkan</button>
-                    <a href="<?php echo base_url() . "transaksi1/laporan"; ?>">Reset Filter</a>
+                    <a href="<?php echo base_url() . "Transaksispp/laporan"; ?>">Reset Filter</a>
                 </form>
 
             </div>
