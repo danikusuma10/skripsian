@@ -31,12 +31,12 @@ class Admin extends CI_Controller
     public function hakakses()
     {
         $data['title'] = 'Data Admin';
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data1['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['user'] = $this->Admin_model->tampil_data()->result();
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
+        $this->load->view('templates/topbar', $data1);
         $this->load->view('admin/hakakses', $data);
         $this->load->view('templates/footer', $data);
     }
