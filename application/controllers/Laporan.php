@@ -7,9 +7,10 @@ class Laporan extends CI_Controller
     {
         parent::__construct();
         date_default_timezone_set("Asia/Jakarta");
+        is_logged_in();
         $this->load->library('form_validation');
         $this->load->model('Siswas_model');
-        //is_logged_in();
+        
     }
 
     public function index()
