@@ -14,7 +14,7 @@ class Siswa extends CI_Controller
     public function index()
     {
         $data['title'] = 'Data Siswa';
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data1['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['siswa'] = $this->Siswas_model->getAllSiswa();
 
         $data['kelas'] = $this->Siswas_model->getAllKelas();
@@ -22,7 +22,7 @@ class Siswa extends CI_Controller
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
+        $this->load->view('templates/topbar', $data1);
         $this->load->view('siswa/index', $data);
         $this->load->view('templates/footer', $data);
     }
