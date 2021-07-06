@@ -124,7 +124,7 @@
 
                 <div class="modal-body">
 
-                    <form method="post" action="<?= base_url('edit'); ?>">
+                    <form method="post" action="<?= base_url('siswa/edit'); ?>">
                         <div class="row">
                             <div class="col-lg">
                                 <div class="form-group">
