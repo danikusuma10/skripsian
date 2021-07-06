@@ -7,7 +7,7 @@ class Transaksispp extends CI_Controller
     {
         parent::__construct();
       
-
+is_logged_in();
         $this->load->model('Transaksi_model');
         $this->load->helper('url');
     }
