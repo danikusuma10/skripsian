@@ -38,17 +38,17 @@
                                 <td><?= $d->is_active ?></td>
                                 <td><?= date('d F Y', $d->date_created)  ?></td>
                                 <td>
-                                    <a href="#" class='fas fa-edit' style='font-size:15px;color:#00cc00' data-toggle="modal" data-target="#updateDonatur<?= $d->id ?>"></a>
-                                    <a href="#" class='fas fa-trash' style='font-size:15px;color:red' data-toggle="modal" data-target="#deleteDonatur<?= $d->id ?>"></a>
+                                    <a href="#" class='fas fa-edit' style='font-size:15px;color:#00cc00' data-toggle="modal" data-target="#updateUser<?= $d->id ?>"></a>
+                                    <a href="#" class='fas fa-trash' style='font-size:15px;color:red' data-toggle="modal" data-target="#deleteUser<?= $d->id ?>"></a>
 
                                 </td>
                             </tr>
-                            <!--update donatur-->
-                            <div class="modal fade" id="updateDonatur<?= $d->id ?>" tabindex="-1" role="dialog" aria-labelledby="addNewDonaturLabel" aria-hidden="true">
+                            <!--update User-->
+                            <div class="modal fade" id="updateUser<?= $d->id ?>" tabindex="-1" role="dialog" aria-labelledby="addNewUserLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="addNewDonaturLabel">Update Hak Akses </h5>
+                                            <h5 class="modal-title" id="addNewUserLabel">Update Hak Akses </h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
@@ -101,12 +101,17 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--delete donatur-->
-                            <div class="modal fade" id="deleteDonatur<?= $d->id ?>" tabindex="-1" role="dialog" aria-labelledby="addNewDonaturLabel" aria-hidden="true">
+
+
+
+
+
+                            <!--delete user-->
+                            <div class="modal fade" id="deleteUser<?= $d->id ?>" tabindex="-1" role="dialog" aria-labelledby="addNewUserLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="addNewDonaturLabel">Hapus Donat</h5>
+                                            <h5 class="modal-title" id="addNewUserLabel">Hapus User</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
