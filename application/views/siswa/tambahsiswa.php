@@ -82,7 +82,7 @@
                         </div>
                         <?= form_error('is_active', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
-                 
+
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Simpan</button>
                         <a class="btn btn-outline-secondary ml-2" role="button" href="<?= base_url('siswa'); ?>">Batal</a>
