@@ -9,6 +9,8 @@ class Admin extends CI_Controller
         is_logged_in();
       
         $this->load->model('Admin_model');
+        $this->load->model('Pembayaran_model');
+        $this->load->model('Siswas');
         $this->load->helper('url');
 
     }
@@ -17,6 +19,11 @@ class Admin extends CI_Controller
     {
         $data['title'] = 'Dashboard';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $data['jumlahsiswa'] = $this->Siswas_model->jumlahsiswa();
+        $data['request'] = $this->Pembayaran_model->request();
+        $data['kas_masuk'] = $this->db->query("SELECT sum(nominal) as nominal FROM kas where tipe_kas = 'masuk'")->row_array();
+        $data['kas_keluar'] = $this->db->query("SELECT sum(nominal) as nominal FROM kas where tipe_kas = 'keluar'")->row_array();
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);

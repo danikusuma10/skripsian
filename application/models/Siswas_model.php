@@ -101,4 +101,14 @@ class Siswas_model extends CI_Model
             redirect('siswa');
         }
     }
+
+    function jumlahsiswa()
+	{
+		$query = $this->db->get('siswa');
+		if ($query->num_rows() > 0) {
+			return $query->num_rows();
+		} else {
+			return 0;
+		}
+	}
 }

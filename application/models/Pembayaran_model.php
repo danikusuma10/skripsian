@@ -25,4 +25,13 @@ class Pembayaran_model extends CI_Model
             redirect('Pembayaran/data_tranksaksi');
         
     }
+    function request()
+	{
+		$query = $this->db->get('tbl_requesttransaksi');
+		if ($query->num_rows() > 0) {
+			return $query->num_rows();
+		} else {
+			return 0;
+		}
+	}
 }
