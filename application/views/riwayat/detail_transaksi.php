@@ -22,7 +22,7 @@
         </div>
 
         <div class="card-body">
-            <form class="form-inline"id="payment-form"  method="post" action="<?= site_url() ?>snap/finish">
+            <form class="form-inline"id="payment-form"  method="post" action="<?= site_url() ?>Snap/finish">
             <input type="hidden" name="result_type" id="result-type" value="">
             <input type="hidden" name="result_data" id="result-data" value="">
                 <input name="id_bayar" class="form-control" id="id_bayar"  type="text" value="<?php echo $u->id_bayar ?>"hidden >
