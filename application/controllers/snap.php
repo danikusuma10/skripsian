@@ -29,18 +29,18 @@ class Snap extends CI_Controller
 		$no_hp_siswa = $this->input->post('no_hp_siswa');
 		$emailwalimurid = $this->input->post('emailwalimurid');
 		$pirangwulan = $this->input->post('pirangwulan');
-		$jumlahe = $this->input->post('jumlahe');
+		$total = $this->input->post('total');
 		// Required
 		$transaction_details = array(
 			'order_id' => rand(),
-			'gross_amount' => $jumlahe // no decimal allowed for creditcard
+			'gross_amount' => $total // no decimal allowed for creditcard
 		);
 
 		// Optional
 		$item1_details = array(
 			'id' => 'a1',
-			'price' => $jumlahe,
-			'quantity' => $pirangwulan,
+			'price' => $total,
+			'quantity' => 1,
 			'name' => "Pembayaran SPP"
 		);
 

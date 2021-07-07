@@ -32,19 +32,13 @@
                 
                 
                 
-                <div class="form-group">
-                                    <label> Berapa Bulan </label>
-                                    <select class="form-control" id="pirangwulan" name="pirangwulan" type="text">
-                                        <option value="1">1 Bulan</option>
-                                        <option value="2">2 Bulan</option>
-                                        <option value="3">3 Bulan</option>
-                                        <option value="4">4 Bulan</option>
-                                        <option value="5">5 Bulan</option>
-                                        <option value="6">6 Bulan</option>
-                                    </select>
+                <div class="form-group ">
+                                    <label> Berapa Bulan ? &nbsp; </label>
+                                    <input type="text" placeholder="Ingin berapa bulan?" name="pirangwulan" id="pirangwulan" class="form-control"   value=" "  >
                                 </div>
+
                         <div class="form-group col-6">
-                    <label>Tahun Ajaran</label>
+                    <label>Tahun Masuk</label>
                     <select name="tahun_masuk" id="tahun_masuk" class="form-control" style="margin-left: 10px;">
                         <?php
                         foreach ($this->db->query('SELECT tahun_masuk.id_tahun, tahun_masuk.tahun_masuk, tahun_masuk.besar_spp FROM tahun_masuk JOIN tahun_aktif ON tahun_masuk.id_tahun=tahun_aktif.id_tahun WHERE id_bayar=\'' . $u->id_bayar . '\'')->result() as $tahun) { /*$this->m_transaksi->tampil_datatahun()->result() */
@@ -53,23 +47,14 @@
 
                         <?php } ?>
                     </select>
+                    <div class="form-group col-6">
+                    <input type="text" id="total" class="form-control" placeholder="Total" >   
+                    <input type="text" name="jumlahe" id="jumlahe" class="form-control" value="<?php echo    number_format($tahun->besar_spp, 0, ',', ''); ?>"  hidden>
+                    </div>
+
                 </div>
-                               
+                 
                     
-                    <select name="jumlahe" id="jumlahe" class="form-control" style="margin-left: 10px;"  hidden>
-                        <?php
-                        foreach ($this->db->query('SELECT tahun_masuk.id_tahun, tahun_masuk.tahun_masuk, tahun_masuk.besar_spp FROM tahun_masuk JOIN tahun_aktif ON tahun_masuk.id_tahun=tahun_aktif.id_tahun WHERE id_bayar=\'' . $u->id_bayar . '\'')->result() as $tahun) { /*$this->m_transaksi->tampil_datatahun()->result() */
-                        ?>
-                            <option value="<?php echo    number_format($tahun->besar_spp, 0, ',', ''); ?>"  </option>
-
-                        <?php } ?>
-                    </select>
-
-                    
-                    <input id="hasil" readonly hidden>
-             
-  
-
                     <div class="form-group col-2">
                     <a class="btn btn-secondary mb-3" href="<?= base_url('riwayat'); ?>">KEMBALI</a>
                     <button type="submit" name="bayar" id="pay-button" class="btn btn-primary mb-3" >BAYAR</button> 
@@ -144,7 +129,18 @@
 </div>
 <!-- End of Main Content -->
 
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#jumlahe, #pirangwulan").keyup(function() {
+            var pirangwulan = $("#pirangwulan").val();
+            var jumlahe= $("#jumlahe").val();
 
+            var total = parseInt(pirangwulan) * parseInt(jumlahe);
+            $("#total").val(total);
+        });
+    });
+</script>
 
 
 <script type="text/javascript">
@@ -157,7 +153,7 @@
         var no_hp_siswa = $('#no_hp_siswa').val();
         var emailwalimurid = $('#emailwalimurid').val();
         var pirangwulan = $('#pirangwulan').val();
-        var jumlahe = $('#jumlahe').val();
+        var total = $('#total').val();
 
         $.ajax({
             type: 'POST',
@@ -170,7 +166,7 @@
                 no_hp_siswa: no_hp_siswa,
                 emailwalimurid: emailwalimurid,
                 pirangwulan: pirangwulan,
-                jumlahe: jumlahe
+                total: total
             },
             cache: false,
 
