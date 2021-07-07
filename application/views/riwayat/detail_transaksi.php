@@ -167,7 +167,7 @@
                 pirangwulan: pirangwulan,
                 total: total
             },
-            cache: false,
+            cache: true,
 
 
             success: function(data) {

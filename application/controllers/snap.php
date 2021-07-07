@@ -29,7 +29,6 @@ class Snap extends CI_Controller
 		$nama_siswa = $this->input->post('nama_siswa');
 		$no_hp_siswa = $this->input->post('no_hp_siswa');
 		$emailwalimurid = $this->input->post('emailwalimurid');
-		
 		$total = $this->input->post('total');
 		// Required
 		$transaction_details = array(
@@ -64,7 +63,7 @@ class Snap extends CI_Controller
 			
 			'first_name'    => "$nama_siswa",
 			'email'         => "$emailwalimurid",
-			'phone'         => "$no_hp_siswa",
+			'phone'         => "$no_hp_siswa"
 			
 		);
 
