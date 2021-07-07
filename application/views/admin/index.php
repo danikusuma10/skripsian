@@ -12,6 +12,7 @@
 
         <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-3 col-md-6 mb-4">
+        <?php if ($_SESSION["role_id"] == "1") { ?><a href="<?= base_url('siswa'); ?>"><?php } ?>
             <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -29,6 +30,7 @@
 
         <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-3 col-md-6 mb-4">
+        <?php if ($_SESSION["role_id"] == "1") { ?><a href="<?= base_url('pembayaran/data_transaksi'); ?>"><?php } ?>
             <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -46,6 +48,7 @@
 
         <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-3 col-md-6 mb-4">
+        <?php if ($_SESSION["role_id"] == "1") { ?><a href="<?= base_url('transaksi/kasmasuk'); ?>"><?php } ?>
             <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -68,6 +71,7 @@
 
         <!-- Pending Requests Card Example -->
         <div class="col-xl-3 col-md-6 mb-4">
+        <?php if ($_SESSION["role_id"] == "1") { ?><a href="<?= base_url('transaksi/kaskeluar'); ?>"><?php } ?>
             <div class="card border-left-warning shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
