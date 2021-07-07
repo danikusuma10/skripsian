@@ -65,7 +65,7 @@ $('#example').DataTable( {
         dom: 'B t<"top"i>r<"clear">',
         language: {
                 lengthMenu: "Display _MENU_ records",
-                zeroRecords: "Masukkan ID Bayar data yang akan dicari <i class='far fa-smile-wink'></i>", // Setting Kata-katanya jika record kosong
+                zeroRecords: "Masukkan ID Bayar dengan benar data yang akan dicari <i class='far fa-smile-wink'></i>", // Setting Kata-katanya jika record kosong
                 processing: "<i class='fas fa-spinner fa-spin' style='align:left;vertical-align:middle;padding:1px;'></i><br> Permintaan sedang diproses" // Kalo lagi proses, misal jika cari data yang ada di datatable
         },
         processing: true, // Ternyata disini masalahnya
