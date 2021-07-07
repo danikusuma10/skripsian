@@ -11,7 +11,7 @@ class Snap extends CI_Controller
 		header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 
 		$params = array('server_key' => 'SB-Mid-server-agj15d5qnNn06ZuKmkPA785C', 'production' => false);
-		$this->load->library('midtrans');
+		
 		$this->load->library('veritrans');
 		$this->midtrans->config($params);
 		$this->load->helper('url');
