@@ -43,6 +43,10 @@
                 <div class="text-center">
                   <a class="small" href="<?= base_url('auth/registration'); ?>">Create an Account!</a>
                 </div>
+                OR
+                <div class="text-center">
+                  <a class="small" href="<?= base_url('riwayat'); ?>">Historical Payment</a>
+                </div>
               </div>
             </div>
           </div>
