@@ -154,9 +154,10 @@ class Auth extends CI_Controller
     {
         $config = [
             'protocol'  => 'smtp',
-            'smtp_host' => 'ssl://smtp.googlemail.com',
-            'smtp_user' => 'danikusumaelektro@gmail.com',
-            'smtp_pass' => 'jiwaku123!',
+            'smtp_host' => 'mail.ypt1pay.masuk.id',
+            'smtp_user' => 'smkypt1pbg@ypt1pay.masuk.id
+            ',
+            'smtp_pass' => 'beliveme16',
             'smtp_port' => 465,
             'mailtype'  => 'html',
             'charset'   => 'iso-8859-1',
@@ -166,15 +167,15 @@ class Auth extends CI_Controller
         $this->load->library('email', $config);
         $this->email->initialize($config);
 
-        $this->email->from('danikusumaelektro@gmail.com', 'YPT PAYMENT CONFIRMATION');
+        $this->email->from('smkypt1pbg@ypt1pay.masuk.id', 'YPT PAYMENT CONFIRMATION');
         $this->email->to($this->input->post('email'));
 
         if ($type == 'verify') {
             $this->email->subject('Kode Aktivasi Akun YPT PAYMENT');
-            $this->email->message('silahkan klik tombol berikut untuk aktivasi akun SIAP Bayar : <a href="' . base_url() . 'auth/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '" type="button" style="color: green;">Activate</a>');
+            $this->email->message('silahkan klik tombol berikut untuk aktivasi akun YPT Payment Gateway 2021 : <a href="' . base_url() . 'auth/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '" type="button" style="color: green;">Activate</a>');
         } else if ($type == 'forgot') {
-            $this->email->subject('Reset Password Akun SIAP Bayar');
-            $this->email->message('silahkan klick tombol berikut untuk reset password akun SIAP Bayar : <a href="' . base_url() . 'auth/resetpassword?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '" type="button" style="color: green;">Reset Password</a>');
+            $this->email->subject('Reset Password Akun YPT Payment Gateway 2021');
+            $this->email->message('silahkan klick tombol berikut untuk reset password akun YPT Payment Gateway 2021 : <a href="' . base_url() . 'auth/resetpassword?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '" type="button" style="color: green;">Reset Password</a>');
         }
 
 
@@ -329,7 +330,7 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('password2', 'Repeat Password', 'trim|required|min_length[6]|matches[password1]');
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = 'SIAP-bayar Change Password';
+            $data['title'] = 'YPT Payment 2021 Change Password';
             $this->load->view('templates/auth_header', $data);
             $this->load->view('auth/changepassword');
             $this->load->view('templates/auth_footer');
