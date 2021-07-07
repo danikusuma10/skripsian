@@ -10,7 +10,7 @@ class Admin extends CI_Controller
       
         $this->load->model('Admin_model');
         $this->load->model('Pembayaran_model');
-        $this->load->model('Siswas');
+        $this->load->model('Siswas_model');
         $this->load->helper('url');
 
     }
