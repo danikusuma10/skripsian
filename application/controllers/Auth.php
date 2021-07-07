@@ -255,7 +255,7 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('email', 'Email', 'trim|valid_email|required');
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = 'SIAP-bayar Forgot Password';
+            $data['title'] = 'YPT Payment 2021 Forgot Password';
             $this->load->view('templates/auth_header', $data);
             $this->load->view('auth/forgotpassword');
             $this->load->view('templates/auth_footer');
@@ -302,6 +302,7 @@ class Auth extends CI_Controller
                 // buat session untuk change password.
                 $this->session->set_userdata('reset_email', $email);
                 $this->changePassword();
+                redirect('auth');
             } else {
                 // jika token tidak ada
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
