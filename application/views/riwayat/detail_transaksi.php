@@ -144,18 +144,6 @@
 </div>
 <!-- End of Main Content -->
 
-<script> type="text/javascript"
-$("#pirangwulan,#jumlahe").keyup(function() {
-   	var val1 = $('#pirangwulan').val(); 
-	var val2 = $('#jumlahe').val(); 
-	var kali = Number(val1) * Number(val2);
-	if ( val1 != "" && val2 != "" ) {
-	   $('#hasil').val(kali);
-	}
-})
-
-</script>
-
 
 
 
