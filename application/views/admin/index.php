@@ -30,7 +30,7 @@
 
         <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-3 col-md-6 mb-4">
-        <?php if ($_SESSION["role_id"] == "1") { ?><a href="<?= base_url('pembayaran/data_transaksi'); ?>"><?php } ?>
+        <?php if ($_SESSION["role_id"] == "1") { ?><a href="<?= base_url('pembayaran/data_tranksaksi'); ?>"><?php } ?>
             <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
