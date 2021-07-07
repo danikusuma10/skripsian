@@ -76,21 +76,21 @@ class CI_Email {
 	 *
 	 * @var	string
 	 */
-	public $smtp_host	= 'ssl://smtp.googlemail.com';
+	public $smtp_host	= 'mail.ypt1pay.masuk.id';
 
 	/**
 	 * SMTP Username
 	 *
 	 * @var	string
 	 */
-	public $smtp_user	= 'dani.kusuma@stikomyos.ac.id';
+	public $smtp_user	= 'smkypt1pbg@ypt1pay.masuk.id';
 
 	/**
 	 * SMTP Password
 	 *
 	 * @var	string
 	 */
-	public $smtp_pass	= 'jiwaku123!';
+	public $smtp_pass	= 'beliveme16';
 
 	/**
 	 * SMTP Server port
@@ -140,7 +140,7 @@ class CI_Email {
 	 *
 	 * @var	string	'text' or 'html'
 	 */
-	public $mailtype	= 'text';
+	public $mailtype	= 'html';
 
 	/**
 	 * Character set (default: utf-8)
