@@ -161,6 +161,7 @@ class Auth extends CI_Controller
             'smtp_port' => 465,
             'mailtype'  => 'html',
             'charset'   => 'iso-8859-1',
+            'starttls'  => true,
             'newline'   => "\r\n"
         ];
 
