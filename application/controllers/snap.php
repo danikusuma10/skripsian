@@ -24,7 +24,7 @@ class Snap extends CI_Controller
 
 	public function token()
 	{
-		$id_bayar = $this->input->post('nama_siswa');
+		
 		$nama_siswa = $this->input->post('nama_siswa');
 		$no_hp_siswa = $this->input->post('no_hp_siswa');
 		$emailwalimurid = $this->input->post('emailwalimurid');
