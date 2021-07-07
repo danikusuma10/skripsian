@@ -12,6 +12,7 @@ class Snap extends CI_Controller
 
 		$params = array('server_key' => 'SB-Mid-server-agj15d5qnNn06ZuKmkPA785C', 'production' => false);
 		$this->load->library('midtrans');
+		$this->load->library('veritrans');
 		$this->midtrans->config($params);
 		$this->load->helper('url');
 		$this->load->model('Snap_model');
@@ -28,7 +29,7 @@ class Snap extends CI_Controller
 		$nama_siswa = $this->input->post('nama_siswa');
 		$no_hp_siswa = $this->input->post('no_hp_siswa');
 		$emailwalimurid = $this->input->post('emailwalimurid');
-		$pirangwulan = $this->input->post('pirangwulan');
+		
 		$total = $this->input->post('total');
 		// Required
 		$transaction_details = array(
