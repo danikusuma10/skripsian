@@ -42,17 +42,16 @@ class Notifications extends CI_Controller {
 		error_log(print_r($result,TRUE));
 
 		//notification handler sample
-
 		
+
 		$transaction = $notif->transaction_status;
+		$transactiontime = $notif->settlement_time;
 		$type = $notif->payment_type;
 		$order_id = $notif->order_id;
-		$transaction_status = $notif->transaction_statu;
-		$settlement_time = $notif->settlement_time;
 
 		
-		if ($transaction == 'settlement'){
-			$this->db->query("update tbl_requesttransaksi set transaction_status='$transaction_status', settlement_time='$settlement_time'   where order_id='$order_id' ");
+		 if ($transaction == 'settlement'){
+			$this->db->query("update tbl_requesttransaksi set transaction_status='$transaction', settlement_time='$transactiontime' ,payment_type='$type'  where order_id='$order_id' ");
 		  echo "Transaction order_id: " . $order_id ." successfully transfered using " . $type;
 		  } 
 		  else if($transaction == 'pending'){
