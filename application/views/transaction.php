@@ -28,7 +28,7 @@
 	<body>
 
 	
-		<form action="<?php echo site_url() ?>transaction/process" method="POST">
+		<form action="<?php echo site_url() ?>Transactions/process" method="POST">
 			<p>
 				<label>Order id</label>
 				<input value="" size="20" type="text" name="order_id" autocomplete="off" />

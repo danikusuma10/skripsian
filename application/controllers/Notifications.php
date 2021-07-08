@@ -44,7 +44,25 @@ class Notifications extends CI_Controller {
 		//notification handler sample
 
 		
+		$transaction = $notif->transaction_status;
+		$type = $notif->payment_type;
+		$order_id = $notif->order_id;
+		$transaction_status = $notif->transaction_statu;
+		$settlement_time = $notif->settlement_time;
+
 		
+		if ($transaction == 'settlement'){
+			$this->db->query("update tbl_requesttransaksi set transaction_status='$transaction_status', settlement_time='$settlement_time'   where order_id='$order_id' ");
+		  echo "Transaction order_id: " . $order_id ." successfully transfered using " . $type;
+		  } 
+		  else if($transaction == 'pending'){
+		  // TODO set payment status in merchant's database to 'Pending'
+		  echo "Waiting customer to finish transaction order_id: " . $order_id . " using " . $type;
+		  } 
+		  else if ($transaction == 'deny') {
+		  // TODO set payment status in merchant's database to 'Denied'
+		  echo "Payment using " . $type . " for transaction order_id: " . $order_id . " is denied.";
+		}
 
 	}
 }
