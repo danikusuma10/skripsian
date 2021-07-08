@@ -185,7 +185,7 @@
                     //resultData.innerHTML = JSON.stringify(data);
                 }
 
-                snap.pay(data, {
+                Snap.pay(data, {
 
                     onSuccess: function(result) {
                         changeResult('success', result);
