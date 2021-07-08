@@ -22,7 +22,7 @@
         </div>
 
         <div class="card-body">
-            <form class="form-inline"id="payment-form"  method="post" action="<?= site_url() ?>Snap/finish">
+            <form class="form-inline"id="payment-form"  method="post" action="<?= site_url() ?>Snaped/finish">
             <input type="hidden" name="result_type" id="result-type" value="">
             <input type="hidden" name="result_data" id="result-data" value="">
                 <input name="id_bayar" class="form-control" id="id_bayar"  type="text" value="<?php echo $u->id_bayar ?>"hidden >
@@ -157,7 +157,7 @@
 
         $.ajax({
             type: 'POST',
-            url: "<?php echo site_url('/Snap/token') ?>",
+            url: "<?php echo site_url('/Snaped/token') ?>",
             data: {
 
                 id_bayar: id_bayar,
@@ -185,7 +185,7 @@
                     //resultData.innerHTML = JSON.stringify(data);
                 }
 
-                Snap.pay(data, {
+                Snaped.pay(data, {
 
                     onSuccess: function(result) {
                         changeResult('success', result);
