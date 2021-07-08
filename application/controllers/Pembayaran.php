@@ -7,7 +7,9 @@ class Pembayaran extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        is_logged_in();
+        if (!$this->session->userdata('email')) {
+            redirect(base_url("auth"));
+        }
         $this->load->database();
         $this->load->helper('url');
         $params = array('server_key' => 'SB-Mid-server-agj15d5qnNn06ZuKmkPA785C', 'production' => false);
