@@ -48,7 +48,7 @@
                         <?php } ?>
                     </select>
                     <div class="form-group col-6">
-                    <input type="text" id="total" class="form-control" placeholder="Total" >   
+                    <input type="text" id="total" class="form-control" placeholder="Total" readonly>   
                     <input type="text" name="jumlahe" id="jumlahe" class="form-control" value="<?php echo    number_format($tahun->besar_spp, 0, ',', ''); ?>"  hidden>
                     </div>
 
