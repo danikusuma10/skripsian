@@ -185,7 +185,7 @@
                     //resultData.innerHTML = JSON.stringify(data);
                 }
 
-                Snaped.pay(data, {
+                snap.pay(data, {
 
                     onSuccess: function(result) {
                         changeResult('success', result);
