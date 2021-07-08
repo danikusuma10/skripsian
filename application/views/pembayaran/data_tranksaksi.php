@@ -44,7 +44,7 @@
                                 <td><?= $t['biller_code']; ?></td>
                                 <td class="text-center">
                                     
-                                    <a href="<?= base_url('transaksi1/detail/' . $t['id_bayar']); ?>" class="badge badge-info mr-1" onclick="return confirm('Yakin ingin konfirmasi data ini?');">
+                                    <a href="<?= base_url('Transaksispp/detail/' . $t['id_bayar']); ?>" class="badge badge-info mr-1" onclick="return confirm('Yakin ingin konfirmasi data ini?');">
                                         <i class="far fa-trash-alt fa-sm"></i> Konfirmasi
                                     </a>
                                     <a href="<?= base_url('Pembayaran/hapusTransaksi/' . $t['order_id']); ?>" class="badge badge-danger" onclick="return confirm('Yakin ingin menghapus data ini?');">
