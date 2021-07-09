@@ -53,7 +53,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 					<center>
 						<marquee direction="up" scrollamount="1" align="center" class="lead text-gray-800 d-none d-lg-block ml-3 mt-2" behavior="alternate" width="90%">
-							<marquee direction="right" behavior="alternate">PAYMENT SPP SMK YPT 1 PURBALINGGA METODE PAYMENT GATEWAY <span class="badge badge-info">Prototype</span> </marquee>
+							<h1>PAYMENT SPP SMK YPT 1 PURBALINGGA METODE PAYMENT GATEWAY <span class="badge badge-info">Prototype</span> </h1>
 						</marquee>
 					</center>
 
@@ -237,7 +237,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								</tr>
 						</div>
 
-						<marquee direction="right" behavior="alternate">----- Maturnuwun sampun bayar SPP tepat waktu ----- <span class="badge badge-info">Prototype</span> </marquee>
+						<marquee direction="right" behavior="alternate">----- Maturnuwun sampun bayar SPP tepat waktu -----  </marquee>
 					</div>
 
 				</body>
