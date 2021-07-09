@@ -1,9 +1,9 @@
 
-<link rel="stylesheet" media="screen" href="css/style.css">
+<link rel="stylesheet" media="screen" href="<?= base_url('assets'); ?>particle/style.css">
 
-<script src="<?= base_url('assets/'); ?>particle/particles.js"></script>
+<script src="<?= base_url('assets'); ?>particle/particles.js"></script>
 
-<script src="<?= base_url('assets/'); ?>particle/app.js"></script>
+<script src="<?= base_url('assets'); ?>particle/app.js"></script>
 
 
 <div id="particles-js">
