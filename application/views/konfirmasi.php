@@ -53,7 +53,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 					<center>
 						<marquee direction="up" scrollamount="1" align="center" class="lead text-gray-800 d-none d-lg-block ml-3 mt-2" behavior="alternate" width="90%">
-							<h1>PAYMENT SPP SMK YPT 1 PURBALINGGA HAVE BEEN SUCCESSFULLY CREATED  </h1>
+							<h1>TRANSAKSI TELAH BERHASIL DIBUAT </h1>
 						</marquee>
 					</center>
 
@@ -150,7 +150,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<body>
 
 					<div class="container">
-						<h1>Confirmation</h1>
+						<h1>Konfirmasi</h1>
 
 						<div id="body">
 							<table>
@@ -227,13 +227,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										}
 										?></td>
 								</tr>
-								<tr>
-									<a class="btn btn-danger" href="<?= base_url('riwayat/'); ?>"><i class="fas fa-sign-out-alt"></i> Kembali</a>
-								</tr>
+								
 							</table>
 
 							<tr>
-									<a class="btn btn-danger" href="<?= base_url('riwayat/'); ?>"><i class="fas fa-sign-out-alt"></i> Kembali</a>
+							<div class="container my-auto">
+						<div class="copyright text-center my-auto">
+						<a class="btn btn-danger" href="<?= base_url('riwayat/'); ?>"><i class="fas fa-sign-out-alt"></i> Maturnuwun</a>
+							</span>
+						</div>
+					</div>
+									
+								
 								</tr>
 						</div>
 
