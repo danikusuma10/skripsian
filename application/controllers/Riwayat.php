@@ -111,4 +111,17 @@ class Riwayat extends CI_Controller
             echo "status tarnksaksi gagal di update";
         }
     }
+
+    public function konfirmasi()
+    {
+        $data['title'] 	= 'Data Pembayaran SPP Siswa';
+        $data['user'] 	= $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data1['siswa'] = $this->Riwayat_model->tampil_data()->result();
+
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/topbare', $data);
+        $this->load->view('konfirmasi');
+        $this->load->view('templates/footer', $data);
+    }
 }
