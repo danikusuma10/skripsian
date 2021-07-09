@@ -55,11 +55,11 @@ class Notifications extends CI_Controller {
 		  echo "Transaction order_id: " . $order_id ." successfully transfered using " . $type;
 		  } 
 		  else if($transaction == 'pending'){
-		  // TODO set payment status in merchant's database to 'Pending'
+			$this->db->query("update tbl_requesttransaksi set transaction_status='$transaction', settlement_time='$transactiontime' ,payment_type='$type'  where order_id='$order_id' ");
 		  echo "Waiting customer to finish transaction order_id: " . $order_id . " using " . $type;
 		  } 
 		  else if ($transaction == 'deny') {
-		  // TODO set payment status in merchant's database to 'Denied'
+			$this->db->query("update tbl_requesttransaksi set transaction_status='$transaction', settlement_time='$transactiontime' ,payment_type='$type'  where order_id='$order_id' ");
 		  echo "Payment using " . $type . " for transaction order_id: " . $order_id . " is denied.";
 		}
 
