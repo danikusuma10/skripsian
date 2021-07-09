@@ -53,7 +53,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 					<center>
 						<marquee direction="up" scrollamount="1" align="center" class="lead text-gray-800 d-none d-lg-block ml-3 mt-2" behavior="alternate" width="90%">
-							<marquee direction="right" behavior="alternate"> Maturnuwun sampun bayar SPP <span class="badge badge-info">Prototype</span> </marquee>
+							<marquee direction="right" behavior="alternate">PAYMENT SPP SMK YPT 1 PURBALINGGA METODE PAYMENT GATEWAY <span class="badge badge-info">Prototype</span> </marquee>
 						</marquee>
 					</center>
 
@@ -158,38 +158,38 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<table>
 								<tr>
 									<td>Status Code</td>
-									<td>:<?php echo $finish->status_code; ?></td>
+									<td>:&nbsp; &nbsp; <?php echo $finish->status_code; ?></td>
 								</tr>
 								<tr>
 									<td>Status Message</td>
-									<td>:<?php echo $finish->status_message; ?></td>
+									<td>:&nbsp; &nbsp;<?php echo $finish->status_message; ?></td>
 								</tr>
 								<tr>
 									<td>Order ID</td>
-									<td>:<?php echo $finish->order_id; ?></td>
+									<td>:&nbsp; &nbsp;<?php echo $finish->order_id; ?></td>
 								</tr>
 								<tr>
 									<td>Transaction Status</td>
-									<td>:<?php echo $finish->transaction_status; ?></td>
+									<td>:&nbsp; &nbsp;<?php echo $finish->transaction_status; ?></td>
 								</tr>
 								<tr>
 									<td>Bill Key</td>
-									<td>:<?php
+									<td>:&nbsp; &nbsp;<?php
 											if (isset($finish->bill_key)) {
 												echo $finish->bill_key;
 											} else {
-												echo "-";
+												echo "0";
 											}
 											?></td>
 								</tr>
 								<tr>
 									<td>Biller Code</td>
-									<td>:
+									<td>:&nbsp; &nbsp;
 										<?php
 										if (isset($finish->biller_code)) {
 											echo $finish->biller_code;
 										} else {
-											echo "-";
+											echo "0";
 										}
 										?></td>
 								</tr>
@@ -197,7 +197,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 								<tr>
 									<td>Bank</td>
-									<td>: <?php
+									<td>: &nbsp; &nbsp;<?php
 											if (isset($finish->va_numbers[0]->bank)) {
 												echo $finish->va_numbers[0]->bank;
 											} else {
@@ -209,23 +209,23 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 								<tr>
 									<td>VA Number</td>
-									<td>:
+									<td>: &nbsp; &nbsp;
 										<?php
 										if (isset($finish->va_numbers[0]->va_number)) {
 											echo $finish->va_numbers[0]->va_number;
 										} else {
-											echo "-";
+											echo "0";
 										}
 										?></td>
 								</tr>
 								<tr>
 									<td>VA Permata</td>
-									<td>:
+									<td>:&nbsp; &nbsp;
 										<?php
 										if (isset($finish->permata_va_number)) {
 											echo $finish->permata_va_number;
 										} else {
-											echo "-";
+											echo "0";
 										}
 										?></td>
 								</tr>
@@ -233,9 +233,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									<a class="btn btn-danger" href="<?= base_url('riwayat/'); ?>"><i class="fas fa-sign-out-alt"></i> Kembali</a>
 								</tr>
 							</table>
+
+							<tr>
+									<a class="btn btn-danger" href="<?= base_url('riwayat/'); ?>"><i class="fas fa-sign-out-alt"></i> Kembali</a>
+								</tr>
 						</div>
 
-						<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
+						<marquee direction="right" behavior="alternate">----- Maturnuwun sampun bayar SPP tepat waktu ----- <span class="badge badge-info">Prototype</span> </marquee>
 					</div>
 
 				</body>
