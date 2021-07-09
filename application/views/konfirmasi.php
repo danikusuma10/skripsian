@@ -53,7 +53,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 					<center>
 						<marquee direction="up" scrollamount="1" align="center" class="lead text-gray-800 d-none d-lg-block ml-3 mt-2" behavior="alternate" width="90%">
-							<h1>PAYMENT SPP SMK YPT 1 PURBALINGGA METODE PAYMENT GATEWAY <span class="badge badge-info">Prototype</span> </h1>
+							<h1>PAYMENT SPP SMK YPT 1 PURBALINGGA HAVE BEEN SUCCESSFULLY CREATED  </h1>
 						</marquee>
 					</center>
 
