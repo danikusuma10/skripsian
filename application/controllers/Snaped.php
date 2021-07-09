@@ -156,6 +156,6 @@ class Snaped extends CI_Controller
 		// print_r($result);
 		
 		$this->data['finish'] = json_decode($this->input->post('result_data')); 
-		redirect(base_url("Riwayat/konfirmasi"));
+		$this->load->view('konfirmasi', $this->data);
 	}
 }
