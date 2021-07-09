@@ -48,15 +48,7 @@
 
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 
-<!-- <script> type="text/javascript">
-$('#example').DataTable( {
-    dom: 'Bfrtip',
-    buttons: [
-        'searchPanesClear',
-        'searchPanes'
-    ]
-} );
-</script> -->
+
 
 <!-- DATATABLE BARU -->
 <script type="text/javascript">

@@ -17,6 +17,7 @@
                             <th scope="col">Id Bayar</th>
                             <th scope="col">Nama</th>
                             <th scope="col">Status transaksi</th>
+                            <th scope="col">Berapa Bulan</th>
                             <th scope="col">Nominal</th>
                             <th scope="col">Tipe Pembayaran</th>
                             <th scope="col">Bank</th>
@@ -35,6 +36,7 @@
                                 <td><?= $t['id_bayar']; ?></td>
                                 <td><?= $t['nama_siswa']; ?></td>
                                 <td><?= $t['transaction_status']; ?></td>
+                                <td><?= $t['berapa_bulan']; ?></td>
                                 <td><?= $t['gross_amount']; ?></td>
                                 <td><?= $t['payment_type']; ?></td>
                                 <td><?= $t['bank']; ?></td>
