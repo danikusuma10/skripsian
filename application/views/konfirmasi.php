@@ -67,10 +67,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 							<h4 class="lead text-gray-800 d-none d-lg-block ml-3 mt-2"> <?php echo date('l, d-m-Y'); ?></h4>
 							</a>
-							<!-- Dropdown - User Information -->
-							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-
-							</div>
+						
+						
 						</li>
 
 					</ul>
