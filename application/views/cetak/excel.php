@@ -1,6 +1,6 @@
 <?php
 header("Content-type: application/vnd-ms-excel");
-header("Content-Disposition: attachment; filename=Buku Kas Umum Pembangunan Masjid Ngadirno.xls");
+header("Content-Disposition: attachment; filename=Transaksi Keuangan Kas Umum SMK YPT 1.xls");
 
 $date1 = date_create($this->session->flashdata('tglawal'));
 $date2 = date_create($this->session->flashdata('tglakhir'));
