@@ -243,7 +243,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						</div>
 
 						<marquee direction="right" behavior="alternate">----- Maturnuwun sampun bayar SPP tepat waktu -----  </marquee>
-					</div>
+						</div>
 
 				</body>
 

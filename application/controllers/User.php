@@ -6,7 +6,9 @@ class User extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        is_logged_in();
+        if (!$this->session->userdata('email')) {
+            redirect(base_url("auth"));
+        }
     }
 
     public function index()
