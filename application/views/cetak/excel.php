@@ -81,7 +81,7 @@ $date2 = date_create($this->session->flashdata('tglakhir'));
                 <th scope="row"><?= $i ?></th>
                 <td><?= date_format($date, "d F Y") ?></td>
                 <td><?= $d['id_transaksi'] ?></td>
-                <?php if ($user['role_id'] == 3 &&  substr($d['keterangan'], 0, 10) == 'Donasi A/n') { ?>
+                <?php if ($user['role_id'] == 2 &&  substr($d['keterangan'], 0, 10) == 'Donasi A/n') { ?>
                     <td><?= substr($d['keterangan'], 0, 10) ?> ****************</td>
                 <?php } else { ?>
                     <td><?= $d['keterangan'] ?></td>
