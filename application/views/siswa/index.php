@@ -68,44 +68,52 @@
                 </div>
 
                 <div class="modal-body">
-                    <div class="col-lg">
-                        <div class="form-group">
-                            <label for="id_bayar">ID Bayar</label>
-                            <input type="text" class="form-control" id="id_bayar" value="<?= $s['id_bayar']; ?>" readonly>
-                        </div>
 
-                        <div class="form-group">
-                            <label for="nama_siswa">Nama Siswa</label>
-                            <input type="text" class="form-control" id="nama_siswa" value="<?= $s['nama_siswa']; ?>" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="jenis_kelamin">Jenis Kelamin</label>
-                            <input type="text" class="form-control" id="jenis_kelamin" value="<?= $s['jenis_kelamin']; ?>" readonly>
-                        </div>
-                    </div>
-                    <div class="col-lg">
-                        <div class="form-group">
-                            <label for="kelas">Kelas</label>
-                            <input type="text" class="form-control" id="kelas" value="<?= $s['nama_kelas']; ?>" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="emailwalimurid">Email Walimurid</label>
-                            <input type="text" class="form-control" id="emailwalimurid" value="<?= $s['emailwalimurid']; ?>" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="no_hp_siswa">NO HP Siswa</label>
-                            <input type="text" class="form-control" id="no_hp_siswa" value="<?= $s['no_hp_siswa']; ?>" readonly>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="modal-footer">
-                    <button class="btn btn-success" type="button" data-dismiss="modal"><i class="fas fa-times"></i> Tutup</button>
-                </div>
-            </div>
+                   
+<div class="row">
+    <div class="col-lg">
+        <div class="form-group">
+            <label for="id_bayar">ID Bayar</label>
+            <input type="text" class="form-control" id="id_bayar" name="id_bayar" value="<?= $s['id_bayar']; ?>" maxlength="16" readonly>
+        </div>
+        <div class="form-group">
+            <label for="nama_siswa">Nama Siswa</label>
+            <input type="text" class="form-control" id="nama_siswa" name="nama_siswa" value="<?= $s['nama_siswa']; ?> readonly">
+         
+        </div>
+        <div class="form-group">
+            <label for="jenis_kelamin">Jenis Kelamin</label>
+            <input type="text" class="form-control" id="jenis_kelamin" name="jenis_kelamin" value="<?= $s['jenis_kelamin']; ?> readonly">
         </div>
     </div>
+
+    <div class="col-lg">
+        <div class="form-group">
+            <label for="emailwalimurid">Email Walimurid</label>
+            <input type="text" class="form-control" id="emailwalimurid" name="emailwalimurid" value="<?= $s['emailwalimurid']; ?> readonly">
+        </div>
+
+        <div class="form-group">
+            <label for="no_hp_siswa">No Hp Siswa</label>
+            <input type="text" class="form-control" id="no_hp_siswa" name="no_hp_siswa" value="<?= $s['no_hp_siswa']; ?> readonly">
+        </div>
+    </div>
+
+
+    <div class="col-lg">
+        <div class="form-group">
+           
+           <label for="kelas">Kelas</label>
+    <input type="text" class="form-control" id="kelas" value="<?= $s['nama_kelas']; ?>" readonly>
+        </div>
+
+        <div class="modal-footer">
+<button class="btn btn-success" type="button" data-dismiss="modal"><i class="fas fa-times"></i> Tutup</button>
+
+
+
+
+</div>
 <?php endforeach; ?>
 <!-- /. akhir detil Modal -->
 
