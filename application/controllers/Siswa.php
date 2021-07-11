@@ -44,7 +44,7 @@ class Siswa extends CI_Controller
             
         ]);
 
-        $this->form_validation->set_rules('emailwalimurid', 'Email', 'required|valid_email|is_unique[siswa.email]',[
+        $this->form_validation->set_rules('emailwalimurid', 'Email', 'required|valid_email|is_unique[siswa.emailwalimurid]',[
             'required' => 'Email Tidak Boleh Kosong',
             'valid_email' => 'Email tidak Valid',
             'is_unique' => 'Email Sudah Terdaftar'
