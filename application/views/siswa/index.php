@@ -32,7 +32,7 @@
                                         <i class="fas fa-book-reader fa-sm"></i> Detail
                                     </a>
 
-                                    <a href="<?= base_url('siswa/editSiswa/' . $s['id_bayar']); ?>" class="badge badge-warning mr-1" data-toggle="modal">
+                                    <a href="<?= base_url('siswa/editSiswa/') ?>" class="badge badge-warning mr-1" data-toggle="modal">
                                         <i class="fas fa-edit fa-sm"></i> edit
                                     </a>
 
