@@ -35,14 +35,17 @@ class Siswa extends CI_Controller
         $data['kelas'] = $this->Siswas_model->getAllKelas();
 
 
-        $this->form_validation->set_rules('id_bayar', 'ID Bayar', 'required|trim|numeric|integer|is_unique[siswa.id_bayar]', [
+        $this->form_validation->set_rules(
+            'id_bayar', 
+            'ID Bayar', 
+            'required|trim|numeric|integer|is_unique[siswa.id_bayar]', 
+            [
             'required' => 'ID Bayar tidak Boleh Kosong!',
             'numeric'  => 'ID Bayar berupa angka!',
-            'integer'  => 'ID Bayar hanya berupa bilangan bulat',
-            'is_unique' => 'ID Bayar sudah terdaftar'
+            'integer'  => 'ID Bayar hanya berupa bilangan bulat','is_unique' => 'ID Bayar sudah terdaftar'
         ]);
 
-
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]');
 
 
         if ($this->form_validation->run() == false) {
@@ -64,7 +67,8 @@ class Siswa extends CI_Controller
     }
 
 
-    public function edit(){
+    public function edit()
+    {
         $id_bayar = $this->input->post('id_bayar');
         $nama_siswa = $this->input->post('nama_siswa');
         $kelas_id = $this->input->post('kelas_id');
