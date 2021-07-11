@@ -63,8 +63,8 @@ class Siswa extends CI_Controller
             'numeric' => 'No Hp Siswa Berupa Angka',
             'integer' => 'No Hp Siswa Hanya Berupa Bilangan Bulat'
         ]);
-        $this->form_validation->set_rules('is_active', 'required',[
-            'required' => 'Status akun harus dipilih'
+        $this->form_validation->set_rules('is_active','Status Akun', 'required',[
+            'required' => 'Status Akun harus dipilih'
         ]);
 
 
