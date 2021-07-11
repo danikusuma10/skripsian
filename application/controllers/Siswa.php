@@ -40,11 +40,16 @@ class Siswa extends CI_Controller
             'required' => 'ID Bayar tidak Boleh Kosong!',
             'numeric'  => 'ID Bayar berupa angka!',
             'integer'  => 'ID Bayar hanya berupa bilangan bulat',
-            'is_unique' => 'ID Bayar sudah terdaftar'
-          
+            'is_unique' => 'ID Bayar sudah terdaftar',
+            'emailwalimurid', 'Email', 'required|valid_email|is_unique[siswa.email]',
+            'nama_siswa', 'Nama Siswa', 'required',
+            'jenis_kelamin', 'Jenis Kelamin', 'required',
+            'kelas_id', 'Kelas ID', 'required',
+            'no_hp_siswa', 'required|numeric|integer',
+            'is_active', 'required'
         ]);
 
-
+      
 
 
         if ($this->form_validation->run() == false) {
