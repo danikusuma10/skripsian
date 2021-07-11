@@ -47,7 +47,7 @@ class Siswa extends CI_Controller
         $this->form_validation->set_rules('emailwalimurid', 'Email', 'required|valid_email|is_unique[siswa.email]');
         $this->form_validation->set_rules('nama_siswa', 'Nama Siswa', 'required');
         $this->form_validation->set_rules('jenis_kelamin', 'Jenis Kelamin', 'required');
-        $this->form_validation->set_rules('kelas_id', 'Kelas ID', 'required',);
+        $this->form_validation->set_rules('kelas_id', 'Kelas ID', 'required');
         $this->form_validation->set_rules('no_hp_siswa', 'required|numeric|integer');
         $this->form_validation->set_rules('is_active', 'required');
 
