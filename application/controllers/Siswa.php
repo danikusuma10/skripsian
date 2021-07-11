@@ -41,15 +41,15 @@ class Siswa extends CI_Controller
             'numeric'  => 'ID Bayar berupa angka!',
             'integer'  => 'ID Bayar hanya berupa bilangan bulat',
             'is_unique' => 'ID Bayar sudah terdaftar',
-            'emailwalimurid', 'Email', 'required|valid_email|is_unique[siswa.email]',
-            'nama_siswa', 'Nama Siswa', 'required',
-            'jenis_kelamin', 'Jenis Kelamin', 'required',
-            'kelas_id', 'Kelas ID', 'required',
-            'no_hp_siswa', 'required|numeric|integer',
-            'is_active', 'required'
+            
         ]);
 
-      
+        $this->form_validation->set_rules('emailwalimurid', 'Email', 'required|valid_email|is_unique[siswa.email]');
+        $this->form_validation->set_rules('nama_siswa', 'Nama Siswa', 'required');
+        $this->form_validation->set_rules('jenis_kelamin', 'Jenis Kelamin', 'required');
+        $this->form_validation->set_rules('kelas_id', 'Kelas ID', 'required',);
+        $this->form_validation->set_rules('no_hp_siswa', 'required|numeric|integer');
+        $this->form_validation->set_rules('is_active', 'required');
 
 
         if ($this->form_validation->run() == false) {
