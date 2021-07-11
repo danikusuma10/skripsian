@@ -38,53 +38,34 @@
                                 </td>
                             </tr>
                             <!--update donatur-->
+                            <div class="modal fade" id="updateAjaran<?= $t->id_tahun ?>" tabindex="-1" role="dialog" aria-labelledby="addNewDonaturLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="addNewDonaturLabel">Ubah Nominal </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="p-5">
 
+                                            <form class="user" method="post" action="<?= base_url('th_ajaran/update'); ?>" enctype="multipart/form-data">
+                                            <div class="form-group">
+                                                    <input type="text" class="form-control form-control-user" id="tahun_masuk" name="tahun_masuk" value="<?php echo $t->tahun_masuk ?>"readonly>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control form-control-user" id="besar_spp" name="besar_spp" value="<?php echo $t->besar_spp ?>">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="submit" name="update" class="btn btn-primary">Update</button>
+                                                </div>
+                                            </form>
 
-                            <?php foreach ($tahun_masuk as $s) : ?>
-    <div class="modal fade" id="editModal<?= $s['id_bayar']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit Data Siswa</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-
-                <div class="modal-body">
-
-                <form class="user" method="post" action="<?= base_url('th_ajaran/update'); ?>" enctype="multipart/form-data">
-                        <div class="row">
-                            <div class="col-lg">
-                                <div class="form-group">
-                                    <label for="tahun_masuk">Tahun Masuk</label>
-                                    <input type="text" class="form-control" id="tahun_masuk" name="tahun_masuk" value="<?= $s['tahun_masuk']; ?>" maxlength="16" readonly>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="besar_spp">Nama Siswa</label>
-                                    <input type="text" class="form-control" id="besar_spp" name="besar_spp" value="<?= $s['besar_spp']; ?>">
-                                    <?= form_error('besar_spp', '<small class="text-danger pl-3">', '</small>'); ?>
-                                </div>
-                                
-
-                                <div class="modal-footer">
-                                    <button type="submit" class="btn btn-primary">Simpan</button>
-                                    <a class="btn btn-outline-secondary ml-2" role="button" href="<?= base_url('th_ajaran'); ?>">Batal</a>
-                                </div>
-
-
                             </div>
-                        </div>
-                    </form>
-                    <!-- akhir form input -->
-
-                </div>
-
-               
-            </div>
-        </div>
-    </div>
-<?php endforeach; ?>
                             <!--delete donatur-->
                             <div class="modal fade" id="deleteAjaran<?= $t->id_tahun ?>" tabindex="-1" role="dialog" aria-labelledby="addNewDonaturLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
