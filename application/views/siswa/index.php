@@ -171,7 +171,7 @@
                                     </select>
                                 </div>
 
-                                <div class="form-group">
+                                <div class="modal-footer">
                                     <button type="submit" class="btn btn-primary">Simpan</button>
                                     <a class="btn btn-outline-secondary ml-2" role="button" href="<?= base_url('siswa'); ?>">Batal</a>
                                 </div>
@@ -184,8 +184,7 @@
 
                 </div>
 
-                <div class="modal-footer">
-                </div>
+               
             </div>
         </div>
     </div>
