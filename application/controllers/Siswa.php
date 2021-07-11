@@ -40,8 +40,8 @@ class Siswa extends CI_Controller
             'required' => 'ID Bayar tidak Boleh Kosong!',
             'numeric'  => 'ID Bayar berupa angka!',
             'integer'  => 'ID Bayar hanya berupa bilangan bulat',
-            'is_unique' => 'ID Bayar sudah terdaftar',
-            'emailwalimurid', 'Email', 'required|valid_email|is_unique[users.email]'
+            'is_unique' => 'ID Bayar sudah terdaftar'
+          
         ]);
 
 
