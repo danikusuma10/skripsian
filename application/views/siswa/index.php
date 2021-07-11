@@ -32,6 +32,9 @@
                                         <i class="fas fa-book-reader fa-sm"></i> Detail
                                     </a>
 
+                                    <a href="#" class='fas fa-edit' style='font-size:15px;color:#00cc00' data-toggle="modal" data-target="#editModal<?= $s['id_bayar']; ?>"></a>
+
+
                                     <a href="#editModal<?= $s['id_bayar']; ?>" class="badge badge-warning mr-1" data-toggle="modal">
                                         <i class="fas fa-edit fa-sm"></i> edit
                                     </a>
