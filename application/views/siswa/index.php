@@ -32,7 +32,7 @@
                                         <i class="fas fa-book-reader fa-sm"></i> Detail
                                     </a>
 
-                                    <a href="<?= base_url('Siswa/editSiswa/' . $s['id_bayar']); ?>>" class="badge badge-warning mr-1" data-toggle="modal">
+                                    <a href="#editModal<?= $s['id_bayar']; ?>" class="badge badge-warning mr-1" data-toggle="modal">
                                         <i class="fas fa-edit fa-sm"></i> edit
                                     </a>
 
@@ -124,7 +124,7 @@
 
                 <div class="modal-body">
 
-                    <form method="post" action="<?= base_url('siswa/edit'); ?>">
+                    <form method="post" action="<?= base_url('Siswa/edit'); ?>">
                         <div class="row">
                             <div class="col-lg">
                                 <div class="form-group">
@@ -170,9 +170,6 @@
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
-
-
-
 
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary">Simpan</button>
