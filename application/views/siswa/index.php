@@ -32,7 +32,7 @@
                                         <i class="fas fa-book-reader fa-sm"></i> Detail
                                     </a>
 
-                                    <a href="#editModal<?= $s['id_bayar']; ?>" class="badge badge-warning mr-1" data-toggle="modal">
+                                    <a href="#editModal<?= $s['id_bayar']; ?>" data-toggle="modal" class="badge badge-warning mr-1" >
                                         <i class="fas fa-edit fa-sm"></i> edit
                                     </a>
 
@@ -178,7 +178,7 @@
 
 
                             </div>
-
+                        </div>
                     </form>
                     <!-- akhir form input -->
 
