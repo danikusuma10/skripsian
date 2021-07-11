@@ -8,7 +8,7 @@
     <div class="card shadow mb-4 py-4 px-4">
 
         <!-- form Input data -->
-        <form method="post" action="<?= base_url('siswa/editsiswa'); ?>">
+        <form method="post" action="<?= base_url('Siswa/editSiswa'); ?>">
             <div class="row">
                 <div class="col-lg">
                     <div class="form-group">
