@@ -11,7 +11,7 @@
     <h1 class="h3 mb-4 text-gray-800"><?= $title ?></h1>
     <!-- DataTales Example -->
     <div class="container">
-        <div class="card shadow mb-4">
+        <div class="card shadow mb-6">
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-borderd" id="example" width="30%" cellspacing="1">
