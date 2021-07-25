@@ -8,7 +8,7 @@
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800"><?= $title ?></h1>
     <!-- DataTales Example -->
-    <div class="card shadow mb-4">
+    <div class="container my-auto">
         <div class="card-body">
 
             <div class="table-responsive">
