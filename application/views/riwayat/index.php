@@ -10,7 +10,7 @@
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800"><?= $title ?></h1>
     <!-- DataTales Example -->
-    <div class="col-md-5 iPhone-features" style="margin-left:25px;">
+    <div class="col-md-5 iPhone-features" style="margin-left:100px;">
         <div class="card shadow mb-4">
             <div class="card-body">
                 <div class="table-responsive">
