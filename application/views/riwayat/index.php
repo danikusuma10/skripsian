@@ -12,7 +12,7 @@
     <!-- DataTales Example -->
     <div class="container">
         <div class="copyright text-center my-auto">
-            <div class="card-body">
+            <div class="copyright text-center my-auto">
                 <div class="table-responsive">
                     <table class="table table-borderd" id="example" width="30%" cellspacing="1">
                         <input type="text" name="id_bayar" id="id_bayar">
