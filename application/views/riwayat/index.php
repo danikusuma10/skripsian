@@ -2,8 +2,8 @@
 
 
 
-<script src="<?= base_url('assets/'); ?>vendor/datatables/jquery.dataTables.min.css"></script>
-<script src="<?= base_url('assets/'); ?>vendor/datatables/jquery.dataTables.css"></script>
+<script src="<?= base_url('assets'); ?>vendor/datatables/jquery.dataTables.min.css"></script>
+<script src="<?= base_url('assets'); ?>vendor/datatables/jquery.dataTables.css"></script>
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
