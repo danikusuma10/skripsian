@@ -47,7 +47,7 @@
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
                 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-                <script src="<?= base_url('assets'); ?>vendor/datatables/jquery.dataTables.min.js"></script>
+                <script src="<?= base_url('assets'); ?>vendor/datatables/jquery.dataTables.mine.js"></script>
                
 
 
