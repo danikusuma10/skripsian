@@ -7,7 +7,7 @@
 
     <!-- Page Heading -->
     <div class="copyright text-center my-auto">
-        <h3>"Pencarian Data Siswa"</h3>
+        <h3>"Pencarian Data Siswa"<br><br></h3> 
     </div>
 
     <!-- DataTales Example -->
@@ -60,8 +60,8 @@
                     dom: 'B t<"top"i>r<"clear">',
                     language: {
                         lengthMenu: "Display _MENU_ records",
-                        zeroRecords: "Masukkan ID Bayar dengan benar data yang akan dicari <i class='far fa-smile-wink'></i>", // Setting Kata-katanya jika record kosong
-                        processing: "<i class='fas fa-spinner fa-spin' style='align:left;vertical-align:middle;padding:1px;'></i><br> Permintaan sedang diproses" // Kalo lagi proses, misal jika cari data yang ada di datatable
+                        zeroRecords: "Masukkan ID Bayar dengan benar data yang akan dicari <i class='far fa-smile-wink'></i>",
+                        processing: "<i class='fas fa-spinner fa-spin' style='align:left;vertical-align:middle;padding:1px;'></i><br> Pencarian sedang diproses" 
                     },
                     processing: true, // Ternyata disini masalahnya
                     serverSide: true,
