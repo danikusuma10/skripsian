@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="<?= base_url('assets'); ?>vendor/datatables/jquery.dataTables.min.css">">
-<link rel="stylesheet" type="text/css" href="<?= base_url('assets'); ?>vendor/datatables/jquery.dataTables.css">">
+<link rel="stylesheet" type="text/css" href="<?= base_url('assets'); ?>vendor/datatables/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="<?= base_url('assets'); ?>vendor/datatables/jquery.dataTables.css">
 
 
 <!-- Begin Page Content -->
@@ -8,7 +8,7 @@
 
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800"><?= $title ?></h1>
+    <h1 class="copyright text-center my-auto"> CARI DATA PEMBAYARAN SISWA</h1>
     <!-- DataTales Example -->
     <div class="container">
         <div class="card shadow mb-6">
