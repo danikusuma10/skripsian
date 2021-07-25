@@ -6,10 +6,13 @@
 
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800"><?= $title ?></h1>
+    <div class="copyright text-center my-auto">
+        <h3>"Pencarian Data Siswa"</h3>
+    </div>
+
     <!-- DataTales Example -->
     <div class="copyright text-center my-auto">
-        <div class="card-body">
+        <div class="copyright text-center my-auto">
 
             <div class="table-responsive">
                 <table class="table table-borderd" id="example" width="30%" cellspacing="1">
@@ -25,7 +28,7 @@
                 </table>
             </div>
 
-           
+
 
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
