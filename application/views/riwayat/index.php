@@ -9,7 +9,7 @@
     <h1 class="h3 mb-4 text-gray-800"><?= $title ?></h1>
     <!-- DataTales Example -->
     <div class="container my-auto">
-        <div class="card-body">
+        <div class="container my-auto">
 
             <div class="table-responsive">
                 <table class="table table-borderd" id="example" width="30%" cellspacing="1">
