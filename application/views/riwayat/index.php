@@ -11,7 +11,7 @@
     <h1 class="copyright text-center my-auto"> CARI DATA PEMBAYARAN SISWA</h1>
     <!-- DataTales Example -->
     <div class="container">
-        <div class="card shadow mb-6">
+        <div class="copyright text-center my-auto">
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-borderd" id="example" width="30%" cellspacing="1">
