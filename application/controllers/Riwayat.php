@@ -6,7 +6,10 @@ class Riwayat extends CI_Controller
     function __construct()
     {
         parent::__construct();
-
+        header("Access-Control-Allow-Origin: *");
+		header("Access-Control-Allow-Methods: PUT, GET, POST");
+		header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+        
         $this->load->helper('url');
         $this->load->database();
         $params = array('server_key' => 'SB-Mid-server-agj15d5qnNn06ZuKmkPA785C', 'production' => false);
