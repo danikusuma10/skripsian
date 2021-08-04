@@ -33,10 +33,8 @@ class Auth extends CI_Controller
     {
         $email = $this->input->post('email');
         $password = $this->input->post('password');
-
         $user = $this->db->get_where('user', ['email' => $email])->row_array();
       
-     
         //jika User ada
         if ($user) {
             // jika user aktif
@@ -69,9 +67,6 @@ class Auth extends CI_Controller
             }
         } 
        
-        
-       
-
         } else {
             //user tidak ada
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
@@ -79,9 +74,6 @@ class Auth extends CI_Controller
             ');
             redirect('auth');
         }
-
-        
-        
     }
 
 
