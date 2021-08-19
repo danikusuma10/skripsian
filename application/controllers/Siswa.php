@@ -9,7 +9,7 @@ class Siswa extends CI_Controller
         is_logged_in();
 
         $this->load->model('Siswas_model');
-        $this->load->helper(array('url'),'string');
+        $this->load->helper(array('url','string'));
     }
 
     public function index()
