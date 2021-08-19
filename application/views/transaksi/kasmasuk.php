@@ -26,6 +26,7 @@
 
                         </div>
                         <div class="form-group">
+                        <label for="inputAddress1">Tanggal</label>
                             <input class="form-control" type="date" id="tanggal" name="tanggal">
                         </div>
                         <div class="form-group">

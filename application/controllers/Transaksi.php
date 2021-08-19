@@ -63,7 +63,7 @@ class Transaksi extends CI_Controller
             'alpha' => 'Keterangan Berupa huruf! '
           
         ]);
-        $this->form_validation->set_rules('tanggal', 'Tanggal', 'required',[
+        $this->form_validation->set_rules('date', 'Date', 'required',[
             'required' => 'Tanggal Tidak Boleh Kosong!'
           
         ]);
