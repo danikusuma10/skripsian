@@ -50,9 +50,13 @@ class Siswa extends CI_Controller
             'valid_email' => 'Email tidak Valid',
             'is_unique' => 'Email Sudah Terdaftar'
         ]);
-        $this->form_validation->set_rules('nama_siswa', 'Nama Siswa', 'required',[
+        $this->form_validation->set_rules('nama_siswa', 'Nama Siswa', 'required|callback_nama_cek',[
             'required' => 'Nama Siswa Tidak Boleh Kosong'
+
+
+
         ]);
+        
         $this->form_validation->set_rules('jenis_kelamin', 'Jenis Kelamin', 'required', [
             'required' => 'Jenis Kelamin Harus dipilih'
         ]);
@@ -69,6 +73,11 @@ class Siswa extends CI_Controller
         ]);
 
 
+        
+
+
+
+
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
             $this->load->view('templates/sidebar', $data);
@@ -81,6 +90,18 @@ class Siswa extends CI_Controller
         }
     }
 
+    public function nama_cek($str)
+    {
+            if ($str == '@')
+            {
+                    $this->form_validation->set_message('username_check', 'The {field} field can not be the symbol "@"');
+                    return FALSE;
+            }
+            else
+            {
+                    return TRUE;
+            }
+    }
 
     public function hapussiswa($id_bayar)
     {
