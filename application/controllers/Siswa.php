@@ -51,9 +51,9 @@ class Siswa extends CI_Controller
             'valid_email' => 'Email tidak Valid',
             'is_unique' => 'Email Sudah Terdaftar'
         ]);
-        $this->form_validation->set_rules('nama_siswa', 'Nama Siswa', 'required|callback_nama_cek',[
-            'required' => 'Nama Siswa Tidak Boleh Kosong'
-
+        $this->form_validation->set_rules('nama_siswa', 'Nama Siswa', 'required|alpha|callback_nama_cek',[
+            'required' => 'Nama Siswa Tidak Boleh Kosong',
+            'alpha' => 'Nama Siswa berupa Huruf saja'
 
 
         ]);
@@ -95,36 +95,49 @@ class Siswa extends CI_Controller
     {
             if ($str == '@')
             {
-                    $this->form_validation->set_message('nama_cek', 'The {field} field can not be the symbol "@"');
+                    $this->form_validation->set_message('nama_cek', ' {field} Tidak boleh berupa symbol "@"');
                     return FALSE;
             }
             else if ($str == '!')
             {
-                    $this->form_validation->set_message('nama_cek', 'The {field} field can not be the symbol "@"');
+                    $this->form_validation->set_message('nama_cek', '{field} Tidak boleh berupa symbol "!"');
                     return FALSE;
             }
             else if ($str == '#')
             {
-                    $this->form_validation->set_message('nama_cek', 'The {field} field can not be the symbol "@"');
+                    $this->form_validation->set_message('nama_cek', ' {field} Tidak boleh berupa symbol "#"');
                     return FALSE;
             }
             else if ($str == '$')
             {
-                    $this->form_validation->set_message('nama_cek', 'The {field} field can not be the symbol "@"');
+                    $this->form_validation->set_message('nama_cek', ' {field} Tidak boleh berupa symbol "$"');
                     return FALSE;
             }
             else if ($str == '%')
             {
-                    $this->form_validation->set_message('nama_cek', 'The {field} field can not be the symbol "@"');
+                    $this->form_validation->set_message('nama_cek', ' {field} Tidak boleh berupa symbol "%"');
                     return FALSE;
             }
             else if ($str == '*')
             {
-                    $this->form_validation->set_message('nama_cek', 'The {field} field can not be the symbol "@"');
+                    $this->form_validation->set_message('nama_cek', ' {field} Tidak boleh berupa symbol "*"');
                     return FALSE;
+            
             }else if ($str == '&')
             {
-                    $this->form_validation->set_message('nama_cek', 'The {field} field can not be the symbol "@"');
+                    $this->form_validation->set_message('nama_cek', ' {field} Tidak boleh berupa symbol "&"');
+                    return FALSE;
+            }else if ($str == '(')
+            {
+                    $this->form_validation->set_message('nama_cek', ' {field} Tidak boleh berupa symbol "("');
+                    return FALSE;
+            }else if ($str == ')')
+            {
+                    $this->form_validation->set_message('nama_cek', ' {field} Tidak boleh berupa symbol ")"');
+                    return FALSE;
+            }else if ($str == '^')
+            {
+                    $this->form_validation->set_message('nama_cek', ' {field} Tidak boleh berupa symbol "^"');
                     return FALSE;
             }
 
