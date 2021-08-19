@@ -9,6 +9,7 @@ class Siswa extends CI_Controller
         is_logged_in();
 
         $this->load->model('Siswas_model');
+        $this->load->helper(array('form', 'url'));
         $this->load->helper(array('url','string'));
     }
 
@@ -94,9 +95,39 @@ class Siswa extends CI_Controller
     {
             if ($str == '@')
             {
-                    $this->form_validation->set_message('username_check', 'The {field} field can not be the symbol "@"');
+                    $this->form_validation->set_message('nama_cek', 'The {field} field can not be the symbol "@"');
                     return FALSE;
             }
+            else if ($str == '!')
+            {
+                    $this->form_validation->set_message('nama_cek', 'The {field} field can not be the symbol "@"');
+                    return FALSE;
+            }
+            else if ($str == '#')
+            {
+                    $this->form_validation->set_message('nama_cek', 'The {field} field can not be the symbol "@"');
+                    return FALSE;
+            }
+            else if ($str == '$')
+            {
+                    $this->form_validation->set_message('nama_cek', 'The {field} field can not be the symbol "@"');
+                    return FALSE;
+            }
+            else if ($str == '%')
+            {
+                    $this->form_validation->set_message('nama_cek', 'The {field} field can not be the symbol "@"');
+                    return FALSE;
+            }
+            else if ($str == '*')
+            {
+                    $this->form_validation->set_message('nama_cek', 'The {field} field can not be the symbol "@"');
+                    return FALSE;
+            }else if ($str == '&')
+            {
+                    $this->form_validation->set_message('nama_cek', 'The {field} field can not be the symbol "@"');
+                    return FALSE;
+            }
+
             else
             {
                     return TRUE;
