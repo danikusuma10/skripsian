@@ -57,8 +57,23 @@ class Transaksi extends CI_Controller
         $data['user'] =  $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
 
-        $this->form_validation->set_rules('keterangan', 'Keterangan', 'required');
-        $this->form_validation->set_rules('nominal', 'Nominal', 'required');
+
+        $this->form_validation->set_rules('keterangan', 'Keterangan', 'required|alpha',[
+            'required' => 'Keterangan Tidak Boleh Kosong!',
+            'alpha' => 'Keterangan Berupa huruf! '
+          
+        ]);
+        $this->form_validation->set_rules('tanggal', 'Tanggal', 'required',[
+            'required' => 'Tanggal Tidak Boleh Kosong!'
+          
+        ]);
+        $this->form_validation->set_rules('nominal', 'Nominal', 'required|numeric',[
+            'required' => 'Keterangan Tidak Boleh Kosong!',
+            'numeric' => 'Nominal Berupa angka! '
+          
+        ]);
+        
+        $this->form_validation->set_rules('nominal', 'Nominal', 'required|numeric');
 
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
