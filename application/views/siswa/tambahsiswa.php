@@ -14,7 +14,7 @@
                     <div class="form-group">
                         <label for="id_bayar">ID Bayar</label>
                         <input type="text" class="form-control" id="id_bayar" name="id_bayar" maxlength="16" value="<?= set_value('id_bayar'); ?>">
-                        <input name="id_bayar" class="form-control" type="text" value="<?php echo $mt_rand; ?>" readonly>
+                        <input name="id_bayar" class="form-control" type="text" value="<?php mt_rand(); ?>" readonly>
                         <?= form_error('id_bayar', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
                     <div class="form-group">
